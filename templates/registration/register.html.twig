@@ -39,56 +39,56 @@
                     }
                 })
             }}
-        </div>
- 
-		<div class="form-control">
-            {{ form_row(registrationForm.prenom, 'Prénom', {
-                label_attr: {
-                    class: 'label-form'
-                    }
-                }) 
-            }}
-            {{ form_row(registrationForm.prenom, {
-                attr: {
-                    class: 'input-form'
-                    }
-                }) 
-            }}
-        </div>
+		</div>
 
 		<div class="form-control">
-            {{ form_row(registrationForm.nom, 'nom', {
-                label_attr: {
+			{{ form_row(registrationForm.prenom, {
+            label: 'Prénom',
+            label_attr: {
                     class: 'label-form'
-                    }
-                }) 
-            }}
-            {{ form_widget(registrationForm.nom, {
-                attr: {
+                    },
+            attr: {
                     class: 'input-form'
                     }
-                }) 
+                })
             }}
-        </div>
+		</div>
+		
+        <div class="form-control">
+			{{ form_row(registrationForm.nom, {
+            label: 'Nom',
+            label_attr: {
+                    class: 'label-form'
+                    },
+            attr: {
+                    class: 'input-form'
+                    }
+                })
+            }}
+		</div>
 
-		<div class="form-control">
-            {{ form_row(registrationForm.telephone, 'telephone', {
-                label_attr: {
+        <div class="form-control">
+			{{ form_row(registrationForm.telephone, {
+            label: 'Telephone',
+            label_attr: {
                     class: 'label-form'
-                    }
-                }) 
-            }}
-            {{ form_widget(registrationForm.telephone, {
-                attr: {
+                    },
+            attr: {
                     class: 'input-form'
                     }
-                }) 
+                })
             }}
-        </div> #}
+		</div>
 
 		<div>{{ form_row(registrationForm.agreeTerms) }}</div>
 
+        <button type="submit" class="butn">Register</button>
+
+        
 		{{ form_end(registrationForm) }}
+        
+        
 	</div>
-	<button type="submit" class="btn">Register</button>
+
+	
 {% endblock %}
