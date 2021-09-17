@@ -2,17 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
-
         <title>{% block title %}Virtuality{% endblock %}</title>
 
         {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('menu') }}
+
         {% endblock %}
+
         {% block javascripts %}
         {% endblock %}
     </head>
+    {% include "_menu.html.twig" %} 
     <body>
-        {% include "_menu.html.twig" %}
         {% block body %}{% endblock %}
     </body>
 </html>
