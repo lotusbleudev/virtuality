@@ -8,28 +8,27 @@
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th>Id</th>
                 <th>Titre</th>
                 <th>Editeur</th>
                 <th>Date</th>
                 <th>Type</th>
                 <th>Description</th>
-                <th>Img_cover</th>
-                <th>Img_gameplay</th>
+
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for jeu in jeux %}
             <tr>
+                <td><img src="/img/{{ jeu.imgCover }}" alt="" class="img-index"></td>
                 <td>{{ jeu.id }}</td>
                 <td>{{ jeu.titre }}</td>
                 <td>{{ jeu.editeur }}</td>
                 <td>{{ jeu.date ? jeu.date|date('Y-m-d') : '' }}</td>
                 <td>{{ jeu.type }}</td>
                 <td>{{ jeu.description }}</td>
-                <td><img src="/img/{{ jeu.imgCover }}" alt="" class="img-index"></td>
-                <td>{{ jeu.imgGameplay ? jeu.imgGameplay|join(', ') : '' }}</td>
                 <td>
                     <a href="{{ path('jeux_show', {'id': jeu.id}) }}">show</a>
                     <a href="{{ path('jeux_edit', {'id': jeu.id}) }}">edit</a>
