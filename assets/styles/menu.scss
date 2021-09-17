@@ -1,28 +1,30 @@
 body {
-    
+    header{
         nav{
             height: 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #353535;
-            div{
-                text-align: center;
-
-                a{
-                    margin: 15px;
-                    padding: 10px;
-                    border: black 1px solid;
-                    border-radius: 5px;
-                    background-color: #010326;
-                    color: #7A2C65;
-                }
-                a:hover{
-                    color: white;
-                    padding: 8px;
-                    border: yellow;
-                }
+            a{
+                margin: 0 20px 0 20px;
+                padding: 10px;
+                border: black 1px solid;
+                border-radius: 5px;
+                background-color: #010326;
+                color: #7A2C65;
             }
-            
+            a:hover{
+                color: #f1f1f1;
+            }
+            p{
+                box-sizing: border-box;
+                height: 100%;
+            }
         }
+        .burger-nav{
+            display: flex;
+            justify-content: space-around;
+        }
+    }
 }
