@@ -12,8 +12,7 @@
 
         {% endblock %}
 
-        {% block javascripts %}
-        {% endblock %}
+        
     </head>
     <body>
         {% include "_menu.html.twig" %}
@@ -23,5 +22,8 @@
         </main>
         
         {% include "_footer.html.twig" %}
+        {% block javascripts %}
+        {{ encore_entry_script_tags("menu") }}
+        {% endblock %}
     </body>
 </html>
