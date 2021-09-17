@@ -1,4 +1,9 @@
+@import './global.scss';
+
+
 body {
+    font-family: $font-1;
+    
     header{
         nav{
             height: 60px;
