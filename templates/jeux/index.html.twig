@@ -28,7 +28,7 @@
                 <td>{{ jeu.date ? jeu.date|date('Y-m-d') : '' }}</td>
                 <td>{{ jeu.type }}</td>
                 <td>{{ jeu.description }}</td>
-                <td>{{ jeu.imgCover }}</td>
+                <td><img src="/img/{{ jeu.imgCover }}" alt="" class="img-index"></td>
                 <td>{{ jeu.imgGameplay ? jeu.imgGameplay|join(', ') : '' }}</td>
                 <td>
                     <a href="{{ path('jeux_show', {'id': jeu.id}) }}">show</a>
