@@ -1,0 +1,44 @@
+/*----------------------------------------FOOTER----------------------------------------*/
+footer {
+	width: 80%;
+	margin: 10px auto;
+	text-align: center;
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 18px;
+    background-color: #010440;
+	color: #edf0f1;
+
+	section {
+		width: 50%;
+		margin: 20px auto;
+		display: flex;
+		justify-content: space-between;
+
+		.f:hover {
+			color: #4267b2;
+		}
+
+		.t:hover {
+			color: #1da1f2;
+		}
+		.i:hover {
+			color: #833ab4;
+		}
+		.y:hover {
+			color: #ff0000;
+		}
+	}
+
+	a {
+		color: #edf0f1;
+		text-decoration: none;
+
+		a:hover {
+			color: #f205b3;
+		}
+	}
+    
+	p {
+		padding: 15px;
+	}
+}

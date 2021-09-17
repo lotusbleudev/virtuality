@@ -8,14 +8,18 @@
             {{ encore_entry_link_tags('app') }}
             {{ encore_entry_link_tags('menu') }}
             {{ encore_entry_link_tags('home') }}
+            {{ encore_entry_link_tags('footer') }}
 
         {% endblock %}
 
         {% block javascripts %}
         {% endblock %}
     </head>
-    {% include "_menu.html.twig" %} 
     <body>
+        {% include "_menu.html.twig" %}
+        
         {% block body %}{% endblock %}
+        
+        {% include "_footer.html.twig" %}
     </body>
 </html>
