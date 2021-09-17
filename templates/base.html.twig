@@ -7,12 +7,13 @@
 
         {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('footer') }}
         {% endblock %}
         {% block javascripts %}
         {% endblock %}
     </head>
     <body>
         {% include "_menu.html.twig" %}
-        {% block body %}{% endblock %}
+        {% include "_footer.html.twig" %}
     </body>
 </html>
