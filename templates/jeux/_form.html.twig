@@ -1,4 +1,87 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <div class="form-control">
+        {{ form_label(form.titre, 'Titre du jeu', {
+            label_attr: {
+                class: 'label-form'
+            }
+        }) }}
+        {{ form_widget(form.titre, {
+            attr: {
+            class: 'input-form'
+            }
+        }) }}
+    </div>
+    <div class="form-control">
+        {{ form_label(form.editeur, 'Editeur', {
+            label_attr: {
+                class: 'label-form'
+            }
+        }) }}
+        {{ form_widget(form.editeur, {
+            attr: {
+            class: 'input-form'
+            }
+        }) }}
+    </div>
+    <div class="form-control">
+        {{ form_label(form.date, 'Date de sortie', {
+            label_attr: {
+                class: 'label-form'
+            }
+        }) }}
+        {{ form_widget(form.date, {
+            attr: {
+            class: 'input-form'
+            }
+        }) }}
+    </div>
+    <div class="form-control">
+        {{ form_label(form.type, 'Type de jeu', {
+            label_attr: {
+                class: 'label-form'
+            }
+        }) }}
+        {{ form_widget(form.type, {
+            attr: {
+            class: 'input-form'
+            }
+        }) }}
+    </div>
+    <div class="form-control">
+        {{ form_label(form.img_cover, 'Image de couverture', {
+            label_attr: {
+                class: 'label-form'
+            }
+        }) }}
+        {{ form_widget(form.img_cover, {
+            attr: {
+            class: 'input-form'
+            }
+        }) }}
+    </div>
+    <div class="form-control">
+        {{ form_label(form.img_gameplay, 'Images du jeu', {
+            label_attr: {
+                class: 'label-form'
+            }
+        }) }}
+        {{ form_widget(form.img_gameplay, {
+            attr: {
+            class: 'input-form'
+            }
+        }) }}
+    </div>
+    <div class="form-control">
+        {{ form_label(form.description, 'Description', {
+            label_attr: {
+                class: 'label-form'
+            }
+        }) }}
+        {{ form_widget(form.description, {
+            attr: {
+            class: 'textarea-form'
+            }
+        }) }}
+    </div>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

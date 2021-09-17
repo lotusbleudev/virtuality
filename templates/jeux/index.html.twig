@@ -20,19 +20,19 @@
             </tr>
         </thead>
         <tbody>
-        {% for jeux in jeuxes %}
+        {% for jeu in jeux %}
             <tr>
-                <td>{{ jeux.id }}</td>
-                <td>{{ jeux.titre }}</td>
-                <td>{{ jeux.editeur }}</td>
-                <td>{{ jeux.date ? jeux.date|date('Y-m-d') : '' }}</td>
-                <td>{{ jeux.type }}</td>
-                <td>{{ jeux.description }}</td>
-                <td>{{ jeux.imgCover }}</td>
-                <td>{{ jeux.imgGameplay ? jeux.imgGameplay|join(', ') : '' }}</td>
+                <td>{{ jeu.id }}</td>
+                <td>{{ jeu.titre }}</td>
+                <td>{{ jeu.editeur }}</td>
+                <td>{{ jeu.date ? jeu.date|date('Y-m-d') : '' }}</td>
+                <td>{{ jeu.type }}</td>
+                <td>{{ jeu.description }}</td>
+                <td>{{ jeu.imgCover }}</td>
+                <td>{{ jeu.imgGameplay ? jeu.imgGameplay|join(', ') : '' }}</td>
                 <td>
-                    <a href="{{ path('jeux_show', {'id': jeux.id}) }}">show</a>
-                    <a href="{{ path('jeux_edit', {'id': jeux.id}) }}">edit</a>
+                    <a href="{{ path('jeux_show', {'id': jeu.id}) }}">show</a>
+                    <a href="{{ path('jeux_edit', {'id': jeu.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
