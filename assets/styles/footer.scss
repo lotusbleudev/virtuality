@@ -1,11 +1,12 @@
+@import './app_global.scss';
+
 /*----------------------------------------FOOTER----------------------------------------*/
 footer {
-	width: 80%;
 	margin: 10px auto;
 	text-align: center;
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 18px;
-    background-color: #010440;
+    background-color: $color-4;
 	color: #edf0f1;
 
 	section {
@@ -41,4 +42,8 @@ footer {
 	p {
 		padding: 15px;
 	}
+
+    hr {
+        width: 80%;
+    }
 }
