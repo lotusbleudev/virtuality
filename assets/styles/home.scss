@@ -1,8 +1,12 @@
+@import './global.scss';
+
+
 #background{
     width: 100%;
 }
 
 #titre{
+    font-family: $font-1;
     font-size: 10vh;
     color: white;
     position: absolute;
