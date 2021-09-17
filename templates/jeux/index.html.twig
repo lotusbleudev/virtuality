@@ -1,46 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Jeux index{% endblock %}
+{% block title %}Tous les jeux{% endblock %}
 
 {% block body %}
-    <h1>Jeux index</h1>
+    <h1>Tout les jeux</h1>
+    <div class="tessst">
+    {% for jeu in jeux %}
+        {% include "jeux/vignette.html.twig" %}
+    {% endfor %}
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Editeur</th>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Description</th>
-
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for jeu in jeux %}
-            <tr>
-                <td><img src="/img/{{ jeu.imgCover }}" alt="" class="img-index"></td>
-                <td>{{ jeu.id }}</td>
-                <td>{{ jeu.titre }}</td>
-                <td>{{ jeu.editeur }}</td>
-                <td>{{ jeu.date ? jeu.date|date('Y-m-d') : '' }}</td>
-                <td>{{ jeu.type }}</td>
-                <td>{{ jeu.description }}</td>
-                <td>
-                    <a href="{{ path('jeux_show', {'id': jeu.id}) }}">show</a>
-                    <a href="{{ path('jeux_edit', {'id': jeu.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('jeux_new') }}">Create new</a>
 {% endblock %}
