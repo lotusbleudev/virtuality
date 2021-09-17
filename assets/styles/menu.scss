@@ -1,12 +1,28 @@
-a{
-    text-decoration: none;
-}
 body {
     
         nav{
+            height: 60px;
             display: flex;
-            background-color: red;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #353535;
+            div{
+                text-align: center;
+
+                a{
+                    margin: 15px;
+                    padding: 10px;
+                    border: black 1px solid;
+                    border-radius: 5px;
+                    background-color: #010326;
+                    color: #7A2C65;
+                }
+                a:hover{
+                    color: white;
+                    padding: 8px;
+                    border: yellow;
+                }
+            }
+            
         }
-    
-    background-color: rgb(51, 51, 51);
 }
