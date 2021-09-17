@@ -1,35 +1,167 @@
 @import './global.scss';
+$font-size-base: 16px;
+$dark-grey: #191919;
+$menu-button-bar-height: 4px;
+$menu-button-bar-width: $menu-button-bar-height * 8;
+$menu-overlay-width: calc(100% - 4rem);
 
+$transition-04s: all 0.4s ease;
+
+$layer1: 1;
+$layer2: 22;
+$layer3: 33;
 
 body {
     font-family: $font-1;
-    
-    header{
-        nav{
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: $color-3;
-            a{
-                margin: 0 20px 0 20px;
-                padding: 10px;
-                border: black 1px solid;
-                border-radius: 5px;
-                background-color: $color-6;
-                color: #7A2C65;
-            }
-            a:hover{
-                color: #f1f1f1;
-            }
-            p{
-                box-sizing: border-box;
-                height: 100%;
-            }
-        }
-        .burger-nav{
-            display: flex;
-            justify-content: space-around;
-        }
+}
+
+.logo{
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+}
+.ouverture{
+    position: fixed;
+    top: 0.1rem;
+    left: 50%;
+}
+.menu-button {
+  width: $menu-button-bar-width;
+  cursor: pointer;
+  z-index: $layer3;
+  display: block;
+  height: calc(#{$menu-button-bar-height * 3} + #{$menu-button-bar-height * 2});
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__wrapper {
+    position: fixed;
+    top: 1rem;
+    right: 2rem;
+    z-index: $layer3;
+    background-color: $color-6;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &__bar {
+    background-color: #f1f1f1;
+    height: $menu-button-bar-height;
+    width: $menu-button-bar-width;
+    display: block;
+    position: absolute;
+    transition: $transition-04s;
+
+    &:nth-of-type(2) {
+      top: $menu-button-bar-height * 2;
     }
+
+    &:nth-of-type(3) {
+      top: $menu-button-bar-height * 4;
+    }
+  }
+
+  &.active {
+    .menu-button__bar {
+      transform: translateY(8px) rotate(45deg);
+
+      &:nth-of-type(2) {
+        transform: translateX(2rem);
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:nth-of-type(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.menu-overlay {
+  background-color: $color-3;
+  height: 100vh;
+  width: $menu-overlay-width;
+  right: 0;
+  position: fixed;
+  padding: 8rem 2rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition-04s;
+  transform: translateX(100%);
+  z-index: $layer2;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.background-overlay {
+//   background-color: rgba($color: $dark-grey, $alpha: 0.5);
+  width: 100%;
+  height: 100vh;
+  z-index: $layer1;
+  opacity: 0;
+  transition: $transition-04s;
+  position: fixed;
+
+  &.bg-overlay {
+    opacity: 1;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    text-decoration: none;
+    color: $dark-grey;
+    font-size: 2rem;
+    transition: $transition-04s;
+    position: relative;
+    align-self: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &::after {
+      content: "";
+      background-color: $dark-grey;
+      height: 2px;
+      width: 0;
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      transition: $transition-04s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.button {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  color: white;
+  background-color: $dark-grey;
+  align-self: flex-start;
+  transition: $transition-04s;
+
+  &:hover {
+    background-color: rgba($color: $dark-grey, $alpha: 0.75);
+  }
+}
+
+.content {
+  max-width: 1440px;
+  padding: 0 2rem;
 }
