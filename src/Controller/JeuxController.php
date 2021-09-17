@@ -17,9 +17,10 @@ class JeuxController extends AbstractController
     public function index(JeuxRepository $jeuxRepository): Response
     {
         return $this->render('jeux/index.html.twig', [
-            'jeuxes' => $jeuxRepository->findAll(),
+            'jeux' => $jeuxRepository->findAll(),
         ]);
     }
+    
 
     #[Route('/new', name: 'jeux_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
@@ -29,6 +30,36 @@ class JeuxController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if($fichier = $form->get("img_cover")->getData()){
+
+                $nomFichier = pathinfo($fichier->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $nomFichier = str_replace(" ", "_", $nomFichier);
+
+                $nomFichier .= uniqid() . "." . $fichier->guessExtension();
+
+                $fichier->move($this->getParameter("dossier_images"), $nomFichier);
+
+                $jeux->setImgCover($nomFichier);
+            }
+
+            if($fichier = $form->get("img_gameplay")->getData()){
+                $images = [];
+                foreach($fichier as $f){
+
+                    $nomFichier = pathinfo($f->getClientOriginalName(), PATHINFO_FILENAME);
+    
+                    $nomFichier = str_replace(" ", "_", $nomFichier);
+    
+                    $nomFichier .= uniqid() . "." . $f->guessExtension();
+    
+                    $f->move($this->getParameter("dossier_images"), $nomFichier);
+                    
+                    array_push($images, $nomFichier);
+                }
+                $jeux->setImgGameplay($images);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($jeux);
             $entityManager->flush();
