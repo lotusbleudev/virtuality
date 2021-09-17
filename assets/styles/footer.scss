@@ -1,6 +1,5 @@
 /*----------------------------------------FOOTER----------------------------------------*/
 footer {
-	width: 80%;
 	margin: 10px auto;
 	text-align: center;
 	font-family: "Josefin Sans", sans-serif;
@@ -41,4 +40,8 @@ footer {
 	p {
 		padding: 15px;
 	}
+
+    hr {
+        width: 80%;
+    }
 }
