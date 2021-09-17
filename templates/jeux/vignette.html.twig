@@ -1,13 +1,13 @@
 <div class="vignette">
 
-    <img src="/img/{{jeu.imgCover}}" alt="">
+    <a href="{{ path('jeux_show', {'id': jeu.id}) }}"><img src="/img/{{jeu.imgCover}}" alt=""></a>
     <div class="vignette-content">
         <div>
             <p class="titre">{{ jeu.titre }}</p>
             <p class="type">{{ jeu.type }}</p>
             <p class="description">{{ jeu.description }}</p>
         </div>
-        <a href="{{ path('jeux_show', {'id': jeu.id}) }}"><p class="vignette-info">Plus d'info</p></a>
+        <a href="{{ path('jeux_show', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
     </div>
 
 </div>
