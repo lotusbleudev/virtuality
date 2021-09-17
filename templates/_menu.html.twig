@@ -1,9 +1,15 @@
+<header>
 <nav>
-    <div>
-        <a href="{{ path("home") }}">VIRTUALITY</a>
-    </div>
+    <a href="{{ path("home") }}">VIRTUALITY</a>
     <p>Ouvert 7j/7 - De 9h00 à 20h00</p>
-    <div>
-        <a href="#">BURGER</a>
-    </div>
+    <a href="#">BURGER</a>
 </nav>
+
+<div class="burger-nav">
+    <a href="{{ path("jeux_index") }}">Jeux</a>
+    <a href="{{ path("prix_index") }}">Prix</a>
+    <a href="{{ path("reservation_index") }}">Reservation</a>
+    <a href="{{ path("tournois_index") }}">Tournois</a>
+    <a href="{{ path("user_index") }}">User</a>
+</div>
+</header>
