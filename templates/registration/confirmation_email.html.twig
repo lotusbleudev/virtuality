@@ -1,12 +1,72 @@
-<h1>Hey! {{user.prenom}}!</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+		<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+	</head>
+	<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 
-<p>
-    Maintenant que vous avez renseigné vos données, il ne vous reste qu'à confirmer <br>
-    votre inscription en cliquant sur le lien suivant 👇<br><br>
-    <a href="{{ signedUrl }}">Confirmer mon mail</a>.
-    Ce mail expire dans {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
-</p>
-
-<p>
-    A bientôt !
-</p>
+		<table bgcolor="#343846" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+			<tbody>
+				<tr>
+					<td style="
+                            color:#ddd;
+                            text-align: center;
+                        ">
+						<h5 style="color:#ddd;">Merci d'avoir renseigné vos données !!</h5>
+                    </td>
+                </tr>
+                <tr>
+					<td>
+						<p style="
+                            color:#ddd;
+                            text-align: center;
+                        " >
+							Maintenant, il ne vous reste plus qu'à confirmer<br>
+							votre inscription en cliquant sur le boutton ci-dessous 👇</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <a href="{{ signedUrl }}" style="
+                                                        text-align: center;
+                                                        display: inline-block;
+                                                        font-size: 1em;
+                                                        padding: 1em 2em;
+                                                        margin-top: 10px;
+                                                        margin-bottom: 60px;
+                                                        -webkit-appearance: none;
+                                                        appearance: none;
+                                                        background-color: #f205b3;
+                                                        color: #ddd;
+                                                        border-radius: 4px;
+                                                        border: none;
+                                                        cursor: pointer;
+                                                        position: relative;
+                                                        transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+                                                        box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+                                    
+                        ">Confirmer mon email</a><br>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <p style="
+                            color:#ddd;
+                            text-align: center;
+                        ">Ce mail expire dans 1 heure {#{{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}#}.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="
+                            color:#ddd;
+                            text-align: center;
+                        ">A bientôt !</p>
+                    </td>
+                </tr>
+			</tbody>
+		</table>
+	</body>
+</html>
