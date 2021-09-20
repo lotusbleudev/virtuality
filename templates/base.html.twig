@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Virtuality{% endblock %}</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Virtuality
+			{% endblock %}
+		</title>
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-            {{ encore_entry_link_tags('menu') }}
-            {{ encore_entry_link_tags('home') }}
-            {{ encore_entry_link_tags('footer') }}
-            {{ encore_entry_link_tags('calendar') }}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+			{{ encore_entry_link_tags('menu') }}
+			{{ encore_entry_link_tags('home') }}
+			{{ encore_entry_link_tags('footer') }}
 
 
-        {% endblock %}
+		{% endblock %}
 
-        
-    </head>
-    <body>
-        {% include "_menu.html.twig" %}
-        
-        <main>
-            {% block body %}{% endblock %}
-        </main>
-        
-        {% include "_footer.html.twig" %}
-        {% block javascripts %}
-        {{ encore_entry_script_tags("menu") }}
-        {{ encore_entry_script_tags('calendar') }}
-        {% endblock %}
-    </body>
+
+	</head>
+	<body>
+		{% include "_menu.html.twig" %}
+
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+
+
+		{% include "_footer.html.twig" %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags("menu") }}
+            {{ encore_entry_script_tags("calendar") }}
+		{% endblock %}
+	</body>
 </html>

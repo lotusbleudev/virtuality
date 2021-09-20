@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
+#calendar {
+	font-family: "play", sans-serif;
+	width: 800px;
+	margin: 0 auto;
+}
