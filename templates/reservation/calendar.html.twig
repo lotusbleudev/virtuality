@@ -9,19 +9,19 @@
 {% block body %}
     <h1>Create new Reservation</h1>
 
-    {{ include('reservation/_form.html.twig') }}
+    {# {{ include('reservation/_form.html.twig') }} #}
 
     <a href="{{ path('reservation_index') }}">Voir la liste des reservation</a>
 
-    
-    <div 
+    {# <a href="{{ path('reservation_new') }}">Créer une nouvelle réservation</a> #}
+
+    {# <div 
         id="calendar-holder"
         data-events-url="{{ path('fc_load_events') }}"
-    ></div>
-
+    ></div> #}
 {% endblock %}
 
 
 {# {% block javascripts %}
     {{ encore_entry_script_tags('calendar') }}
-{% endblock %}  #}
+{% endblock %} #}
