@@ -3,7 +3,7 @@ $font-size-base: 16px;
 $dark-grey: #191919;
 $menu-button-bar-height: 4px;
 $menu-button-bar-width: $menu-button-bar-height * 8;
-$menu-overlay-width: calc(100% - 4rem);
+$menu-overlay-width: calc(30% - 4rem);
 
 $transition-04s: all 0.4s ease;
 
@@ -14,16 +14,24 @@ $layer3: 33;
 body {
 	font-family: $font-1;
 }
+a{
+	font-size: 30px;
+	&:hover{
+		transition: $transition-04s;
+		color: $color-1;
+	}
+	
+}
 
 .logo {
 	position: fixed;
-	top: 1rem;
+	top: 1.3rem;
 	left: 2rem;
 }
 .ouverture {
+	text-align: center;
 	position: fixed;
-	top: 0.1rem;
-	left: 50%;
+	width: 100%;
 }
 .menu-button {
 	width: $menu-button-bar-width;
@@ -43,9 +51,16 @@ body {
 		top: 1rem;
 		right: 2rem;
 		z-index: $layer3;
-		background-color: $color-6;
+		// background-color: $color-6;
 		width: 3rem;
 		height: 3rem;
+		&:hover{
+			.menu-button__bar{
+				transition: $transition-04s;
+				background-color: $color-1;
+			}
+			
+		}
 	}
 
 	&__bar {
@@ -66,6 +81,10 @@ body {
 	}
 
 	&.active {
+		main{
+			transition: $transition-04s;
+			width: 70%;
+		}
 		.menu-button__bar {
 			transform: translateY(8px) rotate(45deg);
 
@@ -83,10 +102,11 @@ body {
 }
 
 .menu-overlay {
-	background-color: $color-3;
+	background-color: $color-6;
 	height: 100vh;
 	width: $menu-overlay-width;
 	right: 0;
+	top: 0;
 	position: fixed;
 	padding: 8rem 2rem;
 	visibility: hidden;
@@ -97,8 +117,9 @@ body {
 
 	&.open {
 		visibility: visible;
-		opacity: 1;
+		opacity: 0.8;
 		transform: translateX(0%);
+
 	}
 }
 
