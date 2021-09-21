@@ -22,6 +22,22 @@ a{
 	}
 	
 }
+.main-width{
+	transition: $transition-04s;
+	width: 100%;
+	&.reduce{
+		transition: $transition-04s;
+		width: 70%;
+	}
+}
+.footer-width{
+	transition: $transition-04s;
+	width: 100%;
+	&.reduce{
+		transition: $transition-04s;
+		width: 70%;
+	}
+}
 
 .logo {
 	position: fixed;
@@ -32,6 +48,12 @@ a{
 	text-align: center;
 	position: fixed;
 	width: 100%;
+}
+.nav {
+	margin: 20px 0;
+	a{
+	margin: 15px 0;
+	}
 }
 .menu-button {
 	width: $menu-button-bar-width;
@@ -81,10 +103,7 @@ a{
 	}
 
 	&.active {
-		main{
-			transition: $transition-04s;
-			width: 70%;
-		}
+		
 		.menu-button__bar {
 			transform: translateY(8px) rotate(45deg);
 
