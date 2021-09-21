@@ -129,7 +129,11 @@ a {
 }
 
 // END RESET
-
+header{
+	display: unset;
+	min-height: 5rem;
+	background-color: rgba($color: #000000, $alpha: 0.5);
+}
 body {
 	width: 100%;
 	background-color: $color-6;
@@ -138,6 +142,7 @@ body {
 	main {
 		// margin-top: 60px;
 		margin-bottom: 40px;
+		// padding-top: 5rem;
 		// width: 100%;
 		display: flex;
 		justify-content: center;

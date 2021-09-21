@@ -22,6 +22,21 @@ a{
 	}
 	
 }
+.logo {
+	position: fixed;
+	top: 1.3rem;
+	left: 2rem;
+}
+.ouverture {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	transition: $transition-04s;
+	&.reduce{
+		transition: $transition-04s;
+		width: 70%;
+	}
+}
 .main-width{
 	transition: $transition-04s;
 	width: 100%;
@@ -38,21 +53,22 @@ a{
 		width: 70%;
 	}
 }
-
-.logo {
-	position: fixed;
-	top: 1.3rem;
-	left: 2rem;
-}
-.ouverture {
-	text-align: center;
-	position: fixed;
-	width: 100%;
+.nav-login{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 3rem;
+	a{
+		margin: 15px 0;
+	}
 }
 .nav {
-	margin: 20px 0;
+	position: absolute;
+	top: 15rem;
+	display: flex;
+	flex-direction: column;
 	a{
-	margin: 15px 0;
+		margin: 15px 0;
 	}
 }
 .menu-button {
@@ -73,7 +89,6 @@ a{
 		top: 1rem;
 		right: 2rem;
 		z-index: $layer3;
-		// background-color: $color-6;
 		width: 3rem;
 		height: 3rem;
 		&:hover{
@@ -81,7 +96,6 @@ a{
 				transition: $transition-04s;
 				background-color: $color-1;
 			}
-			
 		}
 	}
 
@@ -92,11 +106,9 @@ a{
 		display: block;
 		position: absolute;
 		transition: $transition-04s;
-
 		&:nth-of-type(2) {
 			top: $menu-button-bar-height * 2;
 		}
-
 		&:nth-of-type(3) {
 			top: $menu-button-bar-height * 4;
 		}
@@ -106,13 +118,11 @@ a{
 		
 		.menu-button__bar {
 			transform: translateY(8px) rotate(45deg);
-
 			&:nth-of-type(2) {
 				transform: translateX(2rem);
 				opacity: 0;
 				visibility: hidden;
 			}
-
 			&:nth-of-type(3) {
 				transform: translateY(-8px) rotate(-45deg);
 			}
@@ -138,7 +148,7 @@ a{
 		visibility: visible;
 		opacity: 0.8;
 		transform: translateX(0%);
-
+		box-shadow: 10px 0px 50px $color-1;
 	}
 }
 
@@ -153,39 +163,6 @@ a{
 
 	&.bg-overlay {
 		opacity: 1;
-	}
-}
-
-.nav {
-	display: flex;
-	flex-direction: column;
-
-	&__item {
-		text-decoration: none;
-		color: $dark-grey;
-		font-size: 2rem;
-		transition: $transition-04s;
-		position: relative;
-		align-self: flex-start;
-
-		&:not(:last-child) {
-			margin-bottom: 2rem;
-		}
-
-		&::after {
-			content: "";
-			background-color: $dark-grey;
-			height: 2px;
-			width: 0;
-			position: absolute;
-			bottom: -0.5rem;
-			left: 0;
-			transition: $transition-04s;
-		}
-
-		&:hover::after {
-			width: 100%;
-		}
 	}
 }
 
