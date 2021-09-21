@@ -2,10 +2,33 @@
 
 {% block title %}New Reservation{% endblock %}
 
+{% block stylesheets %}
+
+    {{ parent() }}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.css" integrity="sha256-z7G6BBWwBOXahthaod21GyxfNhxiQFBVn6WQYHRs9W8=" crossorigin="anonymous">
+    {{ encore_entry_link_tags('calendar') }}
+
+{% endblock %}
+
 {% block body %}
     <h1>Create new Reservation</h1>
 
     {{ include('reservation/_form.html.twig') }}
 
-    <a href="{{ path('reservation_index') }}">back to list</a>
+    <a href="{{ path('reservation_index') }}">Voir la liste des reservation</a>
+
+    <h2>Calendrier</h2>
+    <div id="calendrier">
+
+    </div>
+
 {% endblock %}
+
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js" integrity="sha256-8nl2O4lMNahIAmUnxZprMxJIBiPv+SzhMuYwEuinVM0=" crossorigin="anonymous"></script>
+    {{ encore_entry_script_tags("calendar") }}
+{% endblock %} 
