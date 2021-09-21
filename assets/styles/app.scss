@@ -401,3 +401,112 @@ body {
 .img-index {
 	width: 150px;
 }
+
+// FLIP CARD INDEX
+
+:root {
+	--cardW: 250px;
+	--cardH: 350px;
+	// --fontFam: "Open Sans", sans-serif;
+	// --color1: #212534;
+	// --color2: #fff;
+	// --color3: #191c29;
+}
+
+
+// Mixins
+@mixin contentFlex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin fullHW {
+	width: 100%;
+	height: 100%;
+}
+@mixin frontCardStyle($val) {
+	background-color: $val;
+}
+@mixin boxShadow {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+		rgba(10, 37, 64, 0.55) 0px -2px 6px 0px inset;
+}
+
+// Flipcard styles
+.flipcards {
+	@include contentFlex;
+	height: 90vh;
+	gap: 3em;
+	font-family: var(--fontFam);
+	display: flex;
+	flex-wrap: wrap;
+
+	.flipcard {
+		@include contentFlex;
+		text-align: center;
+		width: var(--cardW);
+		height: var(--cardH);
+		border-radius: 10px;
+		margin: 0 50px 0 50px;
+		perspective: 1000px;
+		box-shadow: 0;
+
+		&:hover .flipcard__inner {
+			transform: rotateY(-180deg);
+			@include boxShadow;
+		}
+
+		&__inner {
+			position: relative;
+			@include fullHW;
+
+			transform-style: preserve-3d; // required
+			transition: all 0.8s ease;
+
+			.__front,
+			.__back {
+				position: absolute;
+				@include fullHW;
+				@include contentFlex;
+
+				/* Safari */
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+
+				border-radius: 0.5em;
+
+				overflow: hidden;
+				background-color: var(--color2);
+			}
+
+			.__front {
+				z-index: 1;
+				flex-flow: column;
+				border: 2px solid $color-4;
+				background-color: $black;
+				@include frontCardStyle(var(--color3));
+
+				* {
+					margin: 0;
+					width: 100%;
+				}
+			}
+
+			.__back {
+				transform: rotateY(-180deg);
+				z-index: 2;
+				border: 2px solid $color-1;
+				background-color: rgba($black, $alpha: 0.8);
+				display: flex;
+				flex-direction: column;
+				p {
+					margin-top: 1rem;
+					font-size: 1em;
+				}
+			}
+		}
+	}
+}
+
+// FIN DU FLIP CARD

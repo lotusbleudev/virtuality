@@ -1,20 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Virtuality
+{% endblock %}
 
 {% block body %}
     <h1 id="titre">Virtuality</h1>
     <img src="/img/1.jpeg" alt="" id="background">
 <section>
     <h2>Nos jeux</h2>
-    <div>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
-    </div>
+    <div class="flipcards">
+			{% for jeu in jeux %}
+				<div class="flipcard flipcard--red">
+					<div class="flipcard__inner">
+						<div class="__front">
+							<a href="{{ path('jeux_show', {'id': jeu.id}) }}"><img src="/img/{{jeu.imgCover}}" alt=""></a>
+						</div>
+
+						<div class="__back">
+                            <a href="{{ path('jeux_show', {'id': jeu.id}) }}">{{jeu.titre}}</a>
+                            <p>{{jeu.description}}</p>
+						</div>
+
+					</div>
+				</div>
+
+			{% endfor %}
+		</div>
 </section>
 
 <section>
