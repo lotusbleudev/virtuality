@@ -1,14 +1,79 @@
-@import './global.scss';
+@import "./global.scss";
 
-#background{
-    width: 100%;
+#background {
+	width: 100%;
 }
 
-#titre{
-    font-family: $font-1;
-    font-size: 10vh;
-    color: white;
-    position: absolute;
-    top: 15%;
+#titre {
+	font-family: $font-1;
+	font-size: 10vh;
+	color: white;
+	position: absolute;
+	top: 15%;
+}
 
+//--------------------------section "Nos équipements"--------------------------
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    margin: 30px 30px 70px 30px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.box1 {
+	display: flex;
+	margin: 20px 80px;
+	justify-content: space-between;
+    
+    p {
+		text-align: justify;
+	}
+
+	.imgbox {
+		width: 340px;
+	}
+
+	.pBox {
+		animation-duration: 3s;
+		animation-name: glissementDroit;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in-out;
+        margin: 10%;
+
+		@keyframes glissementDroit {
+			from {
+				transform: translate(-50%);
+                opacity: 0%;
+			}
+
+			to {
+				transform: translate(0%);
+                opacity: 100%;
+			}
+		}
+	}
+
+    .pHall {
+		animation-duration: 3s;
+		animation-name: glissementGauche;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in-out;
+        margin: 10%;
+
+		@keyframes glissementGauche {
+			from {
+				transform: translate(50%);
+                opacity: 0%;
+			}
+
+			to {
+				transform: translate(0%);
+                opacity: 100%;
+			}
+		}
+	}
 }
