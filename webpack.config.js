@@ -25,6 +25,7 @@ Encore
     
     .addEntry('menu', './assets/menu.js')
     .addEntry('home', './assets/home.js')
+    .addEntry('faq', './assets/faq.js')
 
     .addEntry('calendar', './assets/calendar/index.js')
 
