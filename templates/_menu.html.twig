@@ -17,11 +17,16 @@
 			<a href="{{ path("app_register") }}">Inscription</a>
 		</nav>
 		<nav class="nav">
-			<a href="{{ path("jeux_index") }}">Jeux</a>
-			<a href="{{ path("prix_index") }}">Prix</a>
+			<a href="{{ path("home") }}">Accueil</a>
+			<a href="{{ path("jeux_index") }}">Liste des jeux</a>
+			<a href="{{ path("prix_index") }}">Tarification</a>
 			<a href="{{ path("reservation_index") }}">Reservation</a>
 			<a href="{{ path("tournois_index") }}">Tournois</a>
 			<a href="{{ path("user_index") }}">Utilisateur</a>
 		</nav>
+		{# <nav class="nav">
+			<p>BackOffice :</p>
+			<a href="{{ path("user_index") }}">Utilisateur</a>
+		</nav> #}
 	</div>
 </header>
