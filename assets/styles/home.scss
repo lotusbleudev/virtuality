@@ -2,8 +2,17 @@
 
 #background {
 	width: 100%;
+	opacity: 0.9;
+	background-color: black;
 }
-
+#background2{
+	position: absolute;
+	opacity: 0.4;
+	background-color: black;
+	margin-top: 2rem;
+	z-index: -1;
+	height: 100%;
+}
 #titre{
     font-family: $font-1;
     font-size: 10vh;
@@ -14,15 +23,21 @@
 }
 //--------------------------section "Nos équipements"--------------------------
 
-
-// .equipement {
-//     margin-top: 700px;
-// }
+.index{
+	// box-shadow: inset 0vh 0vh 50vh 30vh $color-6;
+	z-index: -1;
+}
+.jeux{
+	box-shadow: 0vh -20vh 30vh 20vh $color-6;
+}
+.equipement {
+    box-shadow: inset 0vh 0vh 50vh 30vh $color-6;
+}
 
 h2 {
     font-size: 40px;
     text-align: center;
-    margin: 30px 30px 70px 30px;
+    margin: 50px 30px 70px 30px;
 }
 
 h3 {
