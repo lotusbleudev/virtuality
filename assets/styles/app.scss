@@ -436,7 +436,7 @@ body {
 // Flipcard styles
 .flipcards {
 	@include contentFlex;
-	height: 90vh;
+	// height: 90vh;
 	gap: 3em;
 	font-family: var(--fontFam);
 	display: flex;
@@ -458,7 +458,7 @@ body {
 		}
 
 		&__inner {
-			position: relative;
+			// position: relative;
 			@include fullHW;
 
 			transform-style: preserve-3d; // required
