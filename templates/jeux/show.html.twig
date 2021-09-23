@@ -5,8 +5,8 @@
 {% block body %}
     <h1>Jeux</h1>
 
-    <section>
-        <img src="/img/{{jeux.imgCover}}" alt="">
+    <section class ="jeuShow">
+        <img src="/img/{{jeux.imgCover}}" alt="" class="coverImg">
         {% for pic in jeux.imgGameplay %}
             <img src="/img/{{pic}}" alt="">
         {% endfor %}

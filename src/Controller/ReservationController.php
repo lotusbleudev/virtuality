@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[IsGranted("ROLE_ADMIN")]
 #[Route('/reservation')]
@@ -24,7 +25,7 @@ class ReservationController extends AbstractController
     }
 
     #[Route('/new', name: 'reservation_new', methods: ['GET', 'POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, UserInterface $user): Response
     {
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType::class, $reservation);
@@ -32,6 +33,7 @@ class ReservationController extends AbstractController
 
         
         if ($form->isSubmitted() && $form->isValid()) {
+            $reservation->setUser($user);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($reservation);
             $entityManager->flush();
