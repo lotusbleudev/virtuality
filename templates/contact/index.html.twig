@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de contacte{% endblock %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+
+    {{ encore_entry_link_tags('faq') }}  
+
+{% endblock %}
+
+{% block body %}
+
+    {{ include('./_faq.html.twig') }}
+
+
+    <section class="contact_form">
+
+        <h2>Formulaire de contact</h2>
+
+        <div class="form">
+            {{ form_start(contact_form) }}
+                <div class="form-control">
+                    {{ form_label(contact_form.prenom, 'Prenom', {
+                        label_attr: {
+                            class: 'label-form'
+                            }
+                        }) 
+                    }}
+                    {{ form_widget(contact_form.prenom, {
+                        attr: {
+                            class: 'input-form'
+                            }
+                        }) 
+                    }}
+                </div>
+
+                <div class="form-control">
+                    {{ form_label(contact_form.nom, 'Nom', {
+                        label_attr: {
+                            class: 'label-form'
+                            }
+                        }) 
+                    }}
+                    {{ form_widget(contact_form.nom, {
+                        attr: {
+                            class: 'input-form'
+                            }
+                        }) 
+                    }}
+                </div>
+
+                <div class="form-control">
+                    {{ form_label(contact_form.email, 'Email', {
+                        label_attr: {
+                            class: 'label-form'
+                            }
+                        }) 
+                    }}
+                    {{ form_widget(contact_form.email, {
+                        attr: {
+                            class: 'input-form'
+                            }
+                        }) 
+                    }}
+                </div>
+
+                <div class="form-control">
+                    {{ form_label(contact_form.message, 'Message', {
+                        label_attr: {
+                            class: 'label-form'
+                            }
+                        }) 
+                    }}
+                    {{ form_widget(contact_form.message, {
+                        attr: {
+                            class: 'textarea-form'
+                            }
+                        }) 
+                    }}
+                </div>
+
+                <button class="butn">Envoyer</button>
+            {{ form_end(contact_form) }}
+        </div>
+
+    </section>
+
+
+    <section class="adresse">
+
+
+    </section>
+
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    {{ encore_entry_script_tags("faq") }} {# à retirer de cette page #}
+{% endblock %} 

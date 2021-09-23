@@ -183,6 +183,7 @@ body {
 					padding-left: 15px;
 					border-radius: 20px;
 					margin-bottom: 20px;
+					color: white;
 					background: rgba(255, 255, 255, 0.2);
 				}
 
@@ -191,6 +192,7 @@ body {
 					height: 100px;
 					padding-left: 15px;
 					margin-bottom: 20px;
+					color: white;
 					background: rgba(255, 255, 255, 0.2);
 				}
 
@@ -311,7 +313,12 @@ body {
                         }
                     }
 				}
-			}
+
+				
+			}.contact_form {
+					display: block !important;
+
+				}
 		}
 
 		.table {
