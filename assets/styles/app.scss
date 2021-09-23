@@ -517,3 +517,50 @@ body {
 }
 
 // FIN DU FLIP CARD
+
+
+.jeuShow{
+	margin-top: 13vh;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	div:first-child{
+		display: flex;
+		
+		.coverImg{
+			width: 10vw;
+		}
+
+		div{
+			width: 20vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+
+			h1{
+				font-size: 2em;
+				margin: 0;
+			}
+
+			h2{
+				font-size: 1.5em;
+				margin-top: 0;
+			}
+		}
+	}
+
+	.jeuDescription{
+		width: 50vw;
+		font-size: 1em;
+
+	}
+	.gameplayImg{
+		width: 20vw;
+	}
+
+
+}
