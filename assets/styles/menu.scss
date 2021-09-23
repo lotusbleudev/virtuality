@@ -15,7 +15,7 @@ body {
 	font-family: $font-1;
 }
 .links{
-	font-size: 30px;
+	font-size: 3vh;
 	&:hover{
 		transition: $transition-04s;
 		color: $color-1;
@@ -78,31 +78,29 @@ body {
 	}
 }
 .nav-login{
+	position: absolute;
+	top: 10vh;
 	display: flex;
 	flex-direction: column;
-	position: absolute;
-	top: 3rem;
 	a{
-		margin: 15px 0;
+		margin: 1vh 0;
 	}
 }
 .nav {
 	position: absolute;
-	top: 15rem;
+	top: 30vh;
 	display: flex;
 	flex-direction: column;
 	a{
-		margin: 15px 0;
+		margin: 1vh 0;
 	}
 }
 .menu-button {
-	width: $menu-button-bar-width;
+	width: 3vw;
 	cursor: pointer;
 	z-index: $layer3;
 	display: block;
-	height: calc(
-		#{$menu-button-bar-height * 3} + #{$menu-button-bar-height * 2}
-	);
+	height: 20px;
 	position: relative;
 	top: 50%;
 	left: 50%;
@@ -110,8 +108,8 @@ body {
 
 	&__wrapper {
 		position: fixed;
-		top: 1rem;
-		right: 2rem;
+		top: 2vh;
+		right: 2vw;
 		z-index: $layer3;
 		width: 3rem;
 		height: 3rem;
@@ -125,16 +123,16 @@ body {
 
 	&__bar {
 		background-color: #f1f1f1;
-		height: $menu-button-bar-height;
-		width: $menu-button-bar-width;
+		height: 4px;
+		width: 32px;
 		display: block;
 		position: absolute;
 		transition: $transition-04s;
 		&:nth-of-type(2) {
-			top: $menu-button-bar-height * 2;
+			top: 8px;
 		}
 		&:nth-of-type(3) {
-			top: $menu-button-bar-height * 4;
+			top: 16px;
 		}
 	}
 
@@ -161,7 +159,7 @@ body {
 	right: 0;
 	top: 0;
 	position: fixed;
-	padding: 8rem 2rem;
+	padding: 2vh 2rem;
 	visibility: hidden;
 	opacity: 0;
 	transition: $transition-04s;
@@ -170,7 +168,7 @@ body {
 
 	&.open {
 		visibility: visible;
-		opacity: 0.8;
+		opacity: 1;
 		transform: translateX(0%);
 		box-shadow: 10px 0px 50px $color-1;
 	}
