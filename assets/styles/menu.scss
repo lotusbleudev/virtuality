@@ -30,12 +30,18 @@ a{
 .ouverture {
 	text-align: center;
 	position: fixed;
+	top: 2rem;
 	width: 100%;
 	transition: $transition-04s;
 	&.reduce{
 		transition: $transition-04s;
 		width: 70%;
 	}
+}
+.logs{
+	position: fixed;
+	top: 2rem;
+	left: 13rem;
 }
 .main-width{
 	transition: $transition-04s;
@@ -184,3 +190,4 @@ a{
 	max-width: 1440px;
 	padding: 0 2rem;
 }
+
