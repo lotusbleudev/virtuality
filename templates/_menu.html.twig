@@ -1,7 +1,7 @@
 <header>
     <nav>
-	<a class = "logo" href="{{ path("home") }}">VIRTUALITY</a>
-	<p class="logs">Bonjour {{app.user.prenom}}</p>
+	<a class="logo links" href="{{ path("home") }}">VIRTUALITY</a>
+	<p class="logs">Bonjour <a href='{{path('profil')}}'>{{app.user.prenom}}</a></p>
 	<p class = "ouverture">Ouvert 7j/7 - De 9h00 à 20h00</p>
 	<div class="menu-button__wrapper">
 		<div class="menu-button">
@@ -14,17 +14,17 @@
 
 	<div class="menu-overlay">
 		<nav class="nav-login">
-			<a href="{{path("app_login")}}">Connexion</a>
-			<a href="{{ path("app_register") }}">Inscription</a>
+			<a class="links" href="{{path("app_login")}}">Connexion</a>
+			<a class="links" href="{{ path("app_register") }}">Inscription</a>
 		</nav>
 		<nav class="nav">
-			<a href="{{ path("home") }}">Accueil</a>
-			<a href="{{ path("jeux_index") }}">Liste des jeux</a>
-			<a href="{{ path("prix_index") }}">Tarification</a>
-			<a href="{{ path("tournois_index") }}">Tournois</a>
+			<a class="links" href="{{ path("home") }}">Accueil</a>
+			<a class="links" href="{{ path("jeux_index") }}">Liste des jeux</a>
+			<a class="links" href="{{ path("prix_index") }}">Tarification</a>
+			<a class="links" href="{{ path("tournois_index") }}">Tournois</a>
 			{% if is_granted('ROLE_ADMIN') %}
-				<a href="{{ path("user_index") }}">Utilisateur</a>
-				<a href="{{ path("reservation_index") }}">Reservation</a>
+				<a class="links" href="{{ path("user_index") }}">Utilisateur</a>
+				<a class="links" href="{{ path("reservation_index") }}">Reservation</a>
 			{% endif %}
 		</nav>
 		{# <nav class="nav">

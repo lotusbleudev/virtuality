@@ -14,7 +14,7 @@ $layer3: 33;
 body {
 	font-family: $font-1;
 }
-a{
+.links{
 	font-size: 30px;
 	&:hover{
 		transition: $transition-04s;
@@ -26,12 +26,14 @@ a{
 	position: fixed;
 	top: 1.3rem;
 	left: 2rem;
+	z-index: $layer3;
 }
 .ouverture {
 	text-align: center;
+	width: 100%;
 	position: fixed;
 	top: 2rem;
-	width: 100%;
+	// left: 44%;
 	transition: $transition-04s;
 	&.reduce{
 		transition: $transition-04s;
@@ -42,6 +44,13 @@ a{
 	position: fixed;
 	top: 2rem;
 	left: 13rem;
+	z-index: $layer3;
+	a{
+		&:hover{
+			transition: $transition-04s;
+			color: $color-1;
+		}
+	}
 }
 .main-width{
 	transition: $transition-04s;
