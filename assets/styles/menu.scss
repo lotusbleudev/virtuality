@@ -58,6 +58,15 @@ body {
 	&.reduce{
 		transition: $transition-04s;
 		width: 70%;
+		#titre{
+			top: 6vw;
+			transition: $transition-04s;
+		}
+		#ss-titre{
+			top: 30vw;
+			transition: $transition-04s;
+			width: 70%;
+		}
 	}
 }
 .footer-width{
