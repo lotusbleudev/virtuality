@@ -28,8 +28,7 @@ class ContactController extends AbstractController
                     $this->renderView(
                         'email/email_reçu.html.twig', compact('contact')
                     ),
-                    'text/html' // on lui dit que c'est des text/html car on veut qu'il prend en compte les balises dans notre vue
-
+                    'text/html' // on lui dit que c'est des text/html car on veut qu'il prend en compte les balises dans notre vue 'email_reçu'
                 )
             ; 
             // on envoie le message
