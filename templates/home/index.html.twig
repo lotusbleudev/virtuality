@@ -1,63 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Virtuality{% endblock %}
+{% block title %}Virtuality
+{% endblock %}
 
 {% block body %}
-<h1 id="titre">Virtuality</h1>
-<h2 id="ss-titre">Venez vivre l'aventure de la Réalité Virtuelle, seul ou à plusieurs !</h2>
-	<section class="index">
-		<img src="/img/1.jpeg" alt="background1" id="background">
-		
-	</section>
-	<section class="jeux">
-		<h2>Nos jeux</h2>
-		<div class="flipcards">
-			{% for jeu in jeux %}
-				<div class="flipcard flipcard--red">
-					<div class="flipcard__inner">
-						<div class="__front">
-							<a href="{{ path('jeux_show', {'id': jeu.id}) }}"><img src="/img/{{jeu.imgCover}}" alt=""></a>
-						</div>
+	<h1 id="titre">Virtuality</h1>
+	<h2 id="ss-titre">Venez vivre l'aventure de la Réalité Virtuelle, seul ou à plusieurs !</h2>
+	<img src="/img/1.png" alt="background1" id="background">
 
-						<div class="__back">
-							<a href="{{ path('jeux_show', {'id': jeu.id}) }}"><p>{{jeu.titre}}</p>
-							<p>{{jeu.description}}</p></a>
-						</div>
-
+	<h2>Nos jeux</h2>
+	<div class="flipcards">
+		{% for jeu in jeux %}
+			<div class="flipcard flipcard--red">
+				<div class="flipcard__inner">
+					<div class="__front">
+						<a href="{{ path('jeux_show', {'id': jeu.id}) }}"><img src="/img/{{jeu.imgCover}}" alt=""></a>
 					</div>
+
+					<div class="__back">
+						<a href="{{ path('jeux_show', {'id': jeu.id}) }}">
+							<p>{{jeu.titre}}</p>
+							<p>{{jeu.description}}</p>
+						</a>
+					</div>
+
 				</div>
-			{% endfor %}
-		</div>
-	</section>
-
-	<section class="equipement">
-		<img src="/img/2.jpg" alt="background2" id="background2">
-		<h2>Nos équipements</h2>
-		{# Gear #}
-
-
-		<div class="box1">
-			<img src="/img/virbox1.jpg" alt="box 1" class="imgbox">
-
-			<div class="pBox">
-				<h3>La Box</h3>
-
-				<p>Espace individuel garantissant l'immersion dans la réalité virtuelle. La Box est une salle VR favorable pour les aventurier.es en solo🐱‍👤🐱‍🏍. Nous vous proposons une panoplie de jeux qui vous offrent une expérience unique accessible à tous !</p>
 			</div>
+		{% endfor %}
+	</div>
 
+	<h2>Nos équipements</h2>
+	{# Gear #}
+	<div class="box1">
+		<img src="/img/virbox1.jpg" alt="box 1" class="imgbox">
+		<div class="pBox">
+			<h3>La Box</h3>
+			<p>Espace individuel garantissant l'immersion dans la réalité virtuelle. La Box est une salle VR favorable pour les aventurier.es en solo🐱‍👤🐱‍🏍. Nous vous proposons une panoplie de jeux qui vous offrent une expérience unique accessible à tous !</p>
+		</div>
+	</div>
+
+	<div class="box1">
+		<div class="pHall">
+			<h3>Le Hall</h3>
+
+			<p>C'est l'espace de jeu Extra-Large, avec une capacité d'accueil de 16 joueurs simultannés. Le Hall est l'endroit idéal pour les évenements à grand échelle comme des tournois ou même des anniversaires🥳. C'est aussi un espace propice aux organissemes qui cherchent le meilleur Team-builder pour leurs collaborateurs. Nos sélections de jeux renforcent la communication🙏, la coopération et l'entraide🤝 avec beaucoup de fun🤜🤛.</p>
 		</div>
 
+		<img src="/img/virbox2.jpg" alt="box 2" class="imgbox">
 
-		<div class="box1">
-			<div class="pHall">
-				<h3>Le Hall</h3>
-
-				<p>C'est l'espace de jeu Extra-Large, avec une capacité d'accueil de 16 joueurs simultannés. Le Hall est l'endroit idéal pour les évenements à grand échelle comme des tournois ou même des anniversaires🥳. C'est aussi un espace propice aux organissemes qui cherchent le meilleur Team-builder pour leurs collaborateurs. Nos sélections de jeux renforcent la communication🙏, la coopération et l'entraide🤝 avec beaucoup de fun🤜🤛.</p>
-			</div>
-
-			<img src="/img/virbox2.jpg" alt="box 2" class="imgbox">
-
-		</div>
-
-	</section>
+	</div>
 {% endblock %}

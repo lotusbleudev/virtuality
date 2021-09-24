@@ -2,16 +2,6 @@
 
 #background {
 	width: 100%;
-	opacity: 0.9;
-	background-color: black;
-}
-#background2{
-	position: absolute;
-	opacity: 0.4;
-	background-color: black;
-	margin-top: 2rem;
-	z-index: -1;
-	height: 100%;
 }
 #titre{
     font-family: $font-1;
@@ -32,17 +22,7 @@
 
 
 .index{
-	// box-shadow: inset 0vh 0vh 50vh 30vh $color-6;
-	z-index: -1;
 	width: 100%;
-}
-.jeux{
-	box-shadow: 0vh -20vh 30vh 20vh $color-6;
-}
-
-//--------------------------section "Nos équipements"--------------------------
-.equipement {
-    box-shadow: inset 0vh 0vh 50vh 40vh $color-6;
 }
 
 h2 {
