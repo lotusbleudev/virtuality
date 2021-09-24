@@ -1,13 +1,16 @@
-@import './global.scss';
+@import "./global.scss";
 
 /*----------------------------------------FOOTER----------------------------------------*/
 footer {
 	text-align: center;
 	font-family: $font-1; //sans-serif;
-    font-weight: 400;
+	font-weight: 400;
 	font-size: 18px;
-    background-color: $color-4;
+	background-color: $color-4;
 	color: #edf0f1;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 
 	section {
 		width: 50%;
@@ -38,12 +41,12 @@ footer {
 			color: #f205b3;
 		}
 	}
-    
+
 	p {
 		padding: 15px;
 	}
 
-    hr {
-        width: 80%;
-    }
+	hr {
+		width: 80%;
+	}
 }
