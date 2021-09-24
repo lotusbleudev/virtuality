@@ -8,11 +8,11 @@
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
 
-	<h1>Register</h1>
 
 	<div class="form">
-		{{ form_start(registrationForm) }}
 
+		{{ form_start(registrationForm) }}
+		<h1>Register</h1>
 		<div class="form-control">
 			{{ form_label(registrationForm.email, 'Email', {
                 label_attr: {
@@ -53,8 +53,8 @@
                 })
             }}
 		</div>
-		
-        <div class="form-control">
+
+		<div class="form-control">
 			{{ form_row(registrationForm.nom, {
             label: 'Nom',
             label_attr: {
@@ -67,7 +67,7 @@
             }}
 		</div>
 
-        <div class="form-control">
+		<div class="form-control">
 			{{ form_row(registrationForm.telephone, {
             label: 'Telephone',
             label_attr: {
@@ -82,13 +82,13 @@
 
 		<div>{{ form_row(registrationForm.agreeTerms) }}</div>
 
-        <button type="submit" class="butn">Register</button>
+		<button type="submit" class="butn">Register</button>
 
-        
+
 		{{ form_end(registrationForm) }}
-        
-        
+
+
 	</div>
 
-	
+
 {% endblock %}
