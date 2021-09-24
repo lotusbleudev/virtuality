@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register
-{% endblock %}
+{% block title %}S'inscrire{% endblock %}
 
 {% block body %}
 	{% for flashError in app.flashes('verify_email_error') %}
@@ -12,7 +11,7 @@
 	<div class="form">
 
 		{{ form_start(registrationForm) }}
-		<h1>Register</h1>
+		<h1>Inscription</h1>
 		<div class="form-control">
 			{{ form_label(registrationForm.email, 'Email', {
                 label_attr: {

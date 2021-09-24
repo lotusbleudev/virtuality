@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Prix{% endblock %}
+{% block title %}Editer un Prix{% endblock %}
 
 {% block body %}
-    <h1>Edit Prix</h1>
+    <h1>Editer un Prix</h1>
 
-    {{ include('prix/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('prix/_form.html.twig', {'button_label': 'Enregistrer'}) }}
 
-    <a href="{{ path('prix_index') }}">back to list</a>
+    <a href="{{ path('prix_index') }}">Retour a la liste</a>
 
     {{ include('prix/_delete_form.html.twig') }}
 {% endblock %}

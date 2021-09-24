@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Jeux{% endblock %}
+{% block title %}{{jeux.titre}}{% endblock %}
 
 {% block body %}
 
@@ -17,7 +17,7 @@
         {% for pic in jeux.imgGameplay %}
             <img src="/img/{{pic}}" alt="" class="gameplayImg">
         {% endfor %}
-    <a href="{{ path('jeux_index') }}">Retourner a liste des jeux</a>
+    <a href="{{ path('jeux_index') }}">Retourner a la liste des jeux</a>
     </section>
 
 
