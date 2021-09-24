@@ -3,13 +3,17 @@
 .wrapper {
 	max-width: 400px;
 	margin: 0 auto;
+	transition: $transition-04s;
 
-	h1 {
+	// h1 {
 		text-align: center;
-		margin: 60px 0 40px 0;
-		font-size: 1.5em;
-		font-family: $font-1;
-		text-transform: uppercase;
+	// 	margin: 60px 0 40px 0;
+	// 	font-size: 1.5em;
+	// 	font-family: $font-1;
+	// 	text-transform: uppercase;
+	// }
+	h2{
+		margin: 0;
 	}
 
     strong{
@@ -55,14 +59,23 @@
 		font-size: 0.875em;
 		line-height: 1.4em;
 		display: none;
+		transition: $transition-04s;
 	}
 
 	.trigger-input {
 		display: none;
+		// opacity: 0;
+		// transition: $transition-04s;
+		// transform: translateX(100%);
+		// visibility: hidden;
 	}
 
 	.trigger-input:checked + .trigger-wrapper .faq-contenu {
 		display: block;
+		// transition: $transition-04s;
+		// visibility: visible;
+		// opacity: 1;
+		// transform: translateX(0%);
 	}
 
 	.trigger-input:checked + .trigger-wrapper .faq-titre::after {
