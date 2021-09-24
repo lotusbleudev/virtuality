@@ -32,8 +32,7 @@
 			<a class="links" href="{{ path("prix_index") }}">Tarification</a>
 			<a class="links" href="{{ path("tournois_index") }}">Tournois</a>
 			{% if is_granted('ROLE_ADMIN') %}
-				<a class="links" href="{{ path("user_index") }}">Utilisateur</a>
-				<a class="links" href="{{ path("reservation_index") }}">Reservation</a>
+				<a class="links" href="{{ path("backoffice") }}">Backoffice</a>
 			{% endif %}
 		</nav>
 		{# <nav class="nav">
