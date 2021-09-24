@@ -35,7 +35,7 @@
 		font-size: 1.4em;
 		font-family: $font-1;
 		color: $color-1;
-		text-align: justify;
+		text-align: left;
 		margin: 30px;
 	}
 
@@ -63,6 +63,7 @@
 		line-height: 1.4em;
 		display: none;
 		transition: $transition-04s;
+		text-align: justify;
 	}
 
 	.trigger-input {
