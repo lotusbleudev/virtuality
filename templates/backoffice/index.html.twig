@@ -4,5 +4,10 @@
 
 {% block body %}
     <h1>Backoffice</h1>
-    <a href=""></a>
+        <a class="links" href="{{ path("jeux_index") }}">Jeux</a>
+		<a class="links" href="{{ path("prix_index") }}">Prix</a>
+		<a class="links" href="{{ path("tournois_index") }}">Tournois</a>
+        <a class="links"href="{{ path("user_index") }}">User</a>
+        <a class="links"href="{{ path("reservation_index") }}">Reservation</a>
+
 {% endblock %}
