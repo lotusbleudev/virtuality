@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/jeux')]
+#[Route('/admin/jeux')]
 class JeuxController extends AbstractController
 {
     #[Route('/', name: 'jeux_index', methods: ['GET'])]

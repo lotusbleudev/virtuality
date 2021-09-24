@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class FrontController extends AbstractController
 {
-    #[Route('/front-tarifs', name: 'tarifs')]
+    #[Route('/tarifs', name: 'tarifs')]
     public function tarifs(): Response
     {
         return $this->render('front/index.html.twig', [
@@ -16,7 +16,7 @@ class FrontController extends AbstractController
         ]);
     }
 
-    #[Route('/front-jeux', name: 'jeux')]
+    #[Route('/jeux', name: 'jeux')]
     public function jeux(): Response
     {
         return $this->render('front/index.html.twig', [
@@ -24,7 +24,7 @@ class FrontController extends AbstractController
         ]);
     }
 
-    #[Route('/front-tournois', name: 'tournois')]
+    #[Route('/tournois', name: 'tournois')]
     public function tournois(): Response
     {
         return $this->render('front/index.html.twig', [
