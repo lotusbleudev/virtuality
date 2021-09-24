@@ -129,7 +129,7 @@ a {
 }
 
 // END RESET
-header{
+header {
 	display: unset;
 	min-height: 5rem;
 	background-color: rgba($color: #000000, $alpha: 0.5);
@@ -160,7 +160,6 @@ body {
 			font-size: 40px;
 			margin-top: 10vh;
 			margin-bottom: 5vh;
-
 		}
 
 		.form {
@@ -211,9 +210,8 @@ body {
 				$button-text-color: $white;
 				$baby-blue: $color-2;
 
-
 				.butn {
-                    text-align: center;
+					text-align: center;
 					display: inline-block;
 					font-size: 1em;
 					padding: 1em 2em;
@@ -231,102 +229,179 @@ body {
 					box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
 
 					&:focus {
-                        outline: 0;
-                    }
-                    
-                    &:before, &:after{
-                        position: absolute;
-                        content: '';
-                        display: block;
-                        width: 140%;
-                        height: 100%;
-                        left: -20%;
-                        z-index: -1000;
-                        transition: all ease-in-out 0.5s;
-                        background-repeat: no-repeat;
-                    }
-                    
-                    &:before{
-                        display: none;
-                        top: -75%;
-                        background-image:  
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle,  transparent 20%, $button-bg 20%, transparent 30%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%), 
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle,  transparent 10%, $button-bg 15%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%);
-                        background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
-                        //background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
-                    }
-                    
-                    &:after{
-                        display: none;
-                        bottom: -75%;
-                        background-image:  
-                        radial-gradient(circle, $button-bg 20%, transparent 20%), 
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle,  transparent 10%, $button-bg 15%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%),
-                        radial-gradient(circle, $button-bg 20%, transparent 20%);
-                        background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
-                        //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
-                    }
-                    
-                    &:active{
-                        transform: scale(0.9);
-                        background-color: darken($button-bg, 5%);
-                        box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
-                    }
-                    
-                    &.animate{
-                        &:before{
-                            display: block;
-                            animation: topBubbles ease-in-out 0.75s forwards;
-                        }
-                        &:after{
-                            display: block;
-                            animation: bottomBubbles ease-in-out 0.75s forwards;
-                        }
-                    }
-                    
-                    @keyframes topBubbles {
-                        0%{
-                            background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
-                        }
-                        50% {
-                            background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
-						}
-                        100% {
-                            background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
-                            background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
-                        }
-                    }
-                    
-                    @keyframes bottomBubbles {
-                        0%{
-                            background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
-                        }
-                        50% {
-                            background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
-						}
-                        100% {
-                            background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
-                            background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
-                        }
-                    }
-				}
+						outline: 0;
+					}
 
-				
-			}.contact_form {
-					display: block !important;
+					&:before,
+					&:after {
+						position: absolute;
+						content: "";
+						display: block;
+						width: 140%;
+						height: 100%;
+						left: -20%;
+						z-index: -1000;
+						transition: all ease-in-out 0.5s;
+						background-repeat: no-repeat;
+					}
 
+					&:before {
+						display: none;
+						top: -75%;
+						background-image: radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								transparent 20%,
+								$button-bg 20%,
+								transparent 30%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								transparent 10%,
+								$button-bg 15%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							);
+						background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%,
+							18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+						//background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+					}
+
+					&:after {
+						display: none;
+						bottom: -75%;
+						background-image: radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								transparent 10%,
+								$button-bg 15%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							),
+							radial-gradient(
+								circle,
+								$button-bg 20%,
+								transparent 20%
+							);
+						background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%,
+							15% 15%, 10% 10%, 20% 20%;
+						//background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+					}
+
+					&:active {
+						transform: scale(0.9);
+						background-color: darken($button-bg, 5%);
+						box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+					}
+
+					&.animate {
+						&:before {
+							display: block;
+							animation: topBubbles ease-in-out 0.75s forwards;
+						}
+						&:after {
+							display: block;
+							animation: bottomBubbles ease-in-out 0.75s forwards;
+						}
+					}
+
+					@keyframes topBubbles {
+						0% {
+							background-position: 5% 90%, 10% 90%, 10% 90%,
+								15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%,
+								70% 90%;
+						}
+						50% {
+							background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%,
+								30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+						}
+						100% {
+							background-position: 0% 70%, 0% 10%, 10% 30%,
+								20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%,
+								90% 20%;
+							background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%,
+								0% 0%;
+						}
+					}
+
+					@keyframes bottomBubbles {
+						0% {
+							background-position: 10% -10%, 30% 10%, 55% -10%,
+								70% -10%, 85% -10%, 70% -10%, 70% 0%;
+						}
+						50% {
+							background-position: 0% 80%, 20% 80%, 45% 60%,
+								60% 100%, 75% 70%, 95% 60%, 105% 0%;
+						}
+						100% {
+							background-position: 0% 90%, 20% 90%, 45% 70%,
+								60% 110%, 75% 80%, 95% 70%, 110% 10%;
+							background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%,
+								0% 0%;
+						}
+					}
 				}
+			}
+
+			// .contact_form {
+			// 	display: flex !important;
+			// }
 		}
 
 		.table {
@@ -409,7 +484,6 @@ body {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			
 		}
 	}
 }
@@ -428,7 +502,6 @@ body {
 	// --color2: #fff;
 	// --color3: #191c29;
 }
-
 
 // Mixins
 @mixin contentFlex {
@@ -527,22 +600,21 @@ body {
 
 // FIN DU FLIP CARD
 
-
-.jeuShow{
+.jeuShow {
 	margin-top: 13vh;
 	height: 70vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	div:first-child{
+	div:first-child {
 		display: flex;
-		
-		.coverImg{
+
+		.coverImg {
 			width: 10vw;
 		}
 
-		div{
+		div {
 			width: 20vw;
 			display: flex;
 			flex-direction: column;
@@ -550,26 +622,53 @@ body {
 			justify-content: center;
 			text-align: center;
 
-			h1{
+			h1 {
 				font-size: 2em;
 				margin: 0;
 			}
 
-			h2{
+			h2 {
 				font-size: 1.5em;
 				margin-top: 0;
 			}
 		}
 	}
 
-	.jeuDescription{
+	.jeuDescription {
 		width: 50vw;
 		font-size: 1em;
-
 	}
-	.gameplayImg{
+	.gameplayImg {
 		width: 20vw;
 	}
+}
 
+//-----------------------------------PAGE CONTACT------------------------------------------
 
+.contact_container {
+	display: flex;
+
+	.container_form {
+		width: 45%;
+		margin: 150px 30px 70px 30px;
+
+		.contact_form {
+			display: block !important;
+		}
+
+		.adresse {
+			background: $black;
+			border-radius: 4px;
+			margin-bottom: 20px;
+			padding: 10px;
+			box-shadow: 0 2px 6px rgba(6, 0, 58, 0.548);
+			color: $color-1;
+		}
+	}
+
+	.container_faq {
+		width: 55%;
+		display: flex;
+		margin: 150px 30px 70px 30px;
+	}
 }
