@@ -1,96 +1,115 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Formulaire de contact{% endblock %}
+{% block title %}Formulaire de contact
+{% endblock %}
 
 {% block stylesheets %}
 
-    {{ parent() }}
+	{{ parent() }}
 
-    {{ encore_entry_link_tags('faq') }}  
+	{{ encore_entry_link_tags('faq') }}
 
 {% endblock %}
 
 {% block body %}
 
-    {{ include('./_faq.html.twig') }}
+	<div class="contact_container">
 
-    <section class="contact_form">
+		<div class="container_faq">
+			{{ include('./_faq.html.twig') }}
+		</div>
 
-        <h2>Formulaire de contact</h2>
 
-        <div class="form">
-            {{ form_start(contact_form) }}
-                <div class="form-control">
-                    {{ form_label(contact_form.prenom, 'Prenom', {
+		<div class="container_form">
+
+			<section class="contact_form">
+
+				<h2>Formulaire de contact</h2>
+
+				<div class="form">
+					{{ form_start(contact_form) }}
+					<div class="form-control">
+						{{ form_label(contact_form.prenom, 'Prenom', {
                         label_attr: {
                             class: 'label-form'
                             }
                         }) 
                     }}
-                    {{ form_widget(contact_form.prenom, {
+						{{ form_widget(contact_form.prenom, {
                         attr: {
                             class: 'input-form'
                             }
                         }) 
                     }}
-                </div>
+					</div>
 
-                <div class="form-control">
-                    {{ form_label(contact_form.nom, 'Nom', {
+					<div class="form-control">
+						{{ form_label(contact_form.nom, 'Nom', {
                         label_attr: {
                             class: 'label-form'
                             }
                         }) 
                     }}
-                    {{ form_widget(contact_form.nom, {
+						{{ form_widget(contact_form.nom, {
                         attr: {
                             class: 'input-form'
                             }
                         }) 
                     }}
-                </div>
+					</div>
 
-                <div class="form-control">
-                    {{ form_label(contact_form.email, 'Email', {
+					<div class="form-control">
+						{{ form_label(contact_form.email, 'Email', {
                         label_attr: {
                             class: 'label-form'
                             }
                         }) 
                     }}
-                    {{ form_widget(contact_form.email, {
+						{{ form_widget(contact_form.email, {
                         attr: {
                             class: 'input-form'
                             }
                         }) 
                     }}
-                </div>
+					</div>
 
-                <div class="form-control">
-                    {{ form_label(contact_form.message, 'Message', {
+					<div class="form-control">
+						{{ form_label(contact_form.message, 'Message', {
                         label_attr: {
                             class: 'label-form'
                             }
                         }) 
                     }}
-                    {{ form_widget(contact_form.message, {
+						{{ form_widget(contact_form.message, {
                         attr: {
                             class: 'textarea-form'
                             }
                         }) 
                     }}
+					</div>
+
+					<button class="butn">Envoyer</button>
+					{{ form_end(contact_form) }}
+				</div>
+
+
+                <div class="adresse">
+                    <p>Nous sommes à : <br>
+                    14 Rue Montauban, 75015 Paris</p><br><br>
+                    <p>Vous pouvez nous contacter sur le :<br>
+                    +33 12 34 56 78 90</p><br><br>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.3264172746703!2d2.294117584355657!3d48.8329121564476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6706a1616556b%3A0x8f6c88b342753555!2s6-14%20Rue%20Montauban%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1632483215583!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
-                <button class="butn">Envoyer</button>
-            {{ form_end(contact_form) }}
-        </div>
 
-    </section>
+			</section>
 
+		</div>
 
-    <section class="adresse">
+	</div>
 
-
-    </section>
+	
 
 
 {% endblock %}
@@ -98,7 +117,8 @@
 
 {% block javascripts %}
 
-    {{ parent() }}
+	{{ parent() }}
 
-    {{ encore_entry_script_tags("faq") }} {# à retirer de cette page #}
-{% endblock %} 
+	{{ encore_entry_script_tags("faq") }}
+	{# à retirer de cette page #}
+{% endblock %}

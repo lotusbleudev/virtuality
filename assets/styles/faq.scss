@@ -1,7 +1,7 @@
 @import "./global.scss";
 
 .wrapper {
-	max-width: 400px;
+	max-width: 100%;
 	margin: 0 auto;
 
 	h1 {
@@ -12,10 +12,10 @@
 		text-transform: uppercase;
 	}
 
-    strong{
-        font-style: oblique;
-        font-weight: bold;
-    }
+	strong {
+		font-style: oblique;
+		font-weight: bold;
+	}
 
 	.liste-item {
 		background: $black;
@@ -31,6 +31,8 @@
 		font-size: 1.4em;
 		font-family: $font-1;
 		color: $color-1;
+		text-align: justify;
+		margin: 30px;
 	}
 
 	.faq-titre::before {
@@ -39,6 +41,7 @@
 		height: 12px;
 		width: 24px;
 		margin-right: 10px;
+		margin-left: 10px;
 		background: $color-1;
 	}
 
