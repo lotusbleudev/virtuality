@@ -17,4 +17,10 @@ class HomeController extends AbstractController
             'jeux' => $jeuxRepository->findAll(),
         ]);
     }
+
+    #[Route('/cgu', name: 'cgu')]
+    public function cgu(): Response
+    {
+        return $this->render('home/cgu.html.twig');
+    }
 }
