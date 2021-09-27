@@ -20,7 +20,7 @@ window.onload = () => {
         },
         nowIndicator: true, //indicateur du temps actuel
 
-        // reservation: { data }, // version originale {{data|raw}} pour marquer la variable comme étant safe
+        // reservation: data , // version originale {{data|raw}} pour marquer la variable comme étant safe
         // /!\ problème d'affichage des données dans le calendrier
 
         editable: true,
