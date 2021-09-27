@@ -11,7 +11,7 @@ class FrontController extends AbstractController
     #[Route('/tarifs', name: 'tarifs')]
     public function tarifs(): Response
     {
-        return $this->render('front/index.html.twig', [
+        return $this->render('front/tarifs.html.twig', [
             'controller_name' => 'FrontController',
         ]);
     }
@@ -19,7 +19,7 @@ class FrontController extends AbstractController
     #[Route('/jeux', name: 'jeux')]
     public function jeux(): Response
     {
-        return $this->render('front/index.html.twig', [
+        return $this->render('front/jeux.html.twig', [
             'controller_name' => 'FrontController',
         ]);
     }
@@ -27,7 +27,7 @@ class FrontController extends AbstractController
     #[Route('/tournois', name: 'tournois')]
     public function tournois(): Response
     {
-        return $this->render('front/index.html.twig', [
+        return $this->render('front/tournois.html.twig', [
             'controller_name' => 'FrontController',
         ]);
     }
