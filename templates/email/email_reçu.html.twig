@@ -23,7 +23,7 @@
                             color:#ddd;
                             text-align: center;
                         " >
-							De : 
+							De : <br>
                             Nom : {{ contact.nom }}<br>
                             Prénom : {{ contact.prenom }}<br>
                             Email : {{ contact.email }}</p>
@@ -33,24 +33,12 @@
                     <td>
 						<p style="
                             color:#ddd;
-                            text-align: center;
-                        " >Message : {{ contact.message }}</p> 
+                            text-align: justify;
+                        " >Message : <br>
+                        {{ contact.message }}</p> 
                     </td>
                 </tr>
             </tbody>
 		</table>
 	</body>
 </html>
-
-
-
-
-<h1>Nouveau Contact</h1>
-
-<p>Nom : {{ contact.nom }}</p>
-<p>Prénom : {{ contact.prenom }}</p>
-<p>Email : {{ contact.email }}</p>
-
-
-<p>Message : {{ contact.message }}</p> 
-<!-- |raw -->

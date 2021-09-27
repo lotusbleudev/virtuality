@@ -27,8 +27,6 @@ Encore
     .addEntry('home', './assets/home.js')
     .addEntry('faq', './assets/faq.js')
 
-    .addEntry('calendar', './assets/calendar/index.js')
-
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 

@@ -38,29 +38,10 @@ class ReservationController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Félicitation vous avez bien réserver un créneau.');
+
             return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
         }
-
-        //-----------------------Affichage des réservations dans le calendar
-        $crenaux = [];
-
-        foreach($reservation as $res){ // ici on va faire un push dans le tableaux à chaque prise de crénaux
-            $crenaux[] = [
-                'id' => $res->getId(),
-                'user' => $res->getUser(),
-                'date' => $res->getDate()->date_format('Y-m-d H:i:s'),
-                'nb_joueurs' => $res->getNbJoueurs(),
-                'prix' => $res->getPrix()
-            ];
-        }
-
-        $data = json_encode($crenaux); //permet de passer les données du array $crenaux dans le js du calendrier (voir calendar/index.js)
-
-        return $this->render('reservation/new.html.twig', [
-            'reservation' => $reservation,
-            'form' => $form,
-            'data' => $data
-        ]);
     }
 
     #[Route('/{id}', name: 'reservation_show', methods: ['GET'])]

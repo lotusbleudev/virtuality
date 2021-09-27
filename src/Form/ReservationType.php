@@ -19,8 +19,8 @@ class ReservationType extends AbstractType
                 'hours' => range(9, 19),
                 'minutes' => [00],
                 'attr' => [
-                    'min' => "2021-09-27" 
-                ]
+                    
+                ] //greaterthan , lessthan
                 
             ])
             ->add('nb_joueurs', IntegerType::class, [
