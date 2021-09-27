@@ -8,9 +8,18 @@
             }) }}
             {{ form_widget(form.date, {
                 attr: {
-                class: 'input-form'
+                class: 'input-form',
+                id : 'date'
                 }
             }) }}
+        </div>
+
+        <div class="form-control">
+            <label for="radio" class="label-form">Choisissez le type d'éspace qui vous convient :</label>
+            <select name="" id="radio" class='input-form'>
+                <option value="box">Box</option>
+                <option value="hall">Hall</option>
+            </select>
         </div>
 
         <div class="form-control">
@@ -21,22 +30,15 @@
             }) }}
             {{ form_widget(form.nb_joueurs, {
                 attr: {
-                class: 'input-form'
+                class: 'input-form',
+                id: 'nb_joueurs_input'
                 }
             }) }}
         </div>
 
         <div class="form-control">
-            {{ form_label(form.prix, 'Prix :', {
-                label_attr: {
-                    class: 'label-form'
-                }
-            }) }}
-            {{ form_widget(form.prix, {
-                attr: {
-                class: 'input-form'
-                }
-            }) }}
+            <p>Prix : </p>
+            <p id="prix"></p>
         </div>
 
         <button class="butn">{{ button_label|default('Réserver') }}</button>
