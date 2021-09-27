@@ -4,9 +4,30 @@
 
 {% block body %}
     <h1>Nos tarifs</h1>
-    {% for tarif in tarifs %}
-        {% include "prix/vignette.html.twig" %}
-    {% endfor %}
+
+    <h3>Nous avons deux offres:</h3>
+    <section id="tarifsFront">
+        <div>
+            <h2>La box</h2>
+
+            <p>Une box ne peut accueillir qu'un seul joueur. Vous aurez la possiblité de jouer en ligne avec des joueurs d'autres boxs.</p>
+            <p>Les boxs sont reservés pour une heure de temps.</p><br>
+            <ul>
+                <li>Prix semaine: {{ boxSemaine.montant }}€</li>
+                <li>Prix weekEnd: {{ boxWeekend.montant }}€</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Le Hall</h2>
+
+            <p>Le hall peut accueillir jusqu’à 16 joueurs en simultané.</p>
+            <p>Les hall sont reservés pour une après-midi.</p><br>
+            <ul>
+                <li>Prix semaine: {{ hallSemaine.montant }}€</li>
+                <li>Prix weekEnd: {{ hallWeekend.montant }}€</li>
+            </ul>
+        </div>
+    </section>
 
 
 {% endblock %}

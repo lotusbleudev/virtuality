@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Jeux;
 use App\Entity\Reservation;
 use App\Form\ReservationType;
 use App\Repository\JeuxRepository;
@@ -19,7 +20,11 @@ class FrontController extends AbstractController
     public function tarifs(PrixRepository $pr): Response
     {
         return $this->render('front/tarifs.html.twig', [
-            "tarifs" => $pr->findAll()
+            "tarifs" => $pr->findAll(),
+            "boxSemaine" => $pr->find('1'),
+            "boxWeekend" => $pr->find('4'),
+            "hallSemaine" => $pr->find('3'),
+            "hallWeekend" => $pr->find('6'),
         ]);
     }
 
@@ -28,6 +33,14 @@ class FrontController extends AbstractController
     {
         return $this->render('front/jeux.html.twig', [
             "jeux" => $jr->findAll()
+        ]);
+    }
+
+    #[Route('jeu/{id}', name: 'jeu_detail', methods: ['GET'])]
+    public function show(Jeux $jeux): Response
+    {
+        return $this->render('front/detail-jeu.html.twig', [
+            'jeux' => $jeux,
         ]);
     }
 

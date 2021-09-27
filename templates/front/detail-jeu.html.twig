@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{jeux.titre}}{% endblock %}
+
+{% block body %}
+
+    <section class ="jeuShow">
+        <div>
+            <img src="/img/{{jeux.imgCover}}" alt="" class="coverImg">
+            <div>
+                <h1>{{jeux.titre}}</h1>
+                <h2>Edité par {{jeux.editeur}}</h2>
+                <p>{{jeux.type}} sorti le {{jeux.date|date('d/m/Y')}}</p>
+            </div>
+        </div>
+        <p class="jeuDescription">{{jeux.description}}</p>
+        {% for pic in jeux.imgGameplay %}
+            <img src="/img/{{pic}}" alt="" class="gameplayImg">
+        {% endfor %}
+    <a href="{{ path('jeux') }}">Retourner a la liste des jeux</a>
+    </section>
+
+
+{% endblock %}
