@@ -1,14 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}BackOffice{% endblock %}
+{% block title %}BackOffice
+{% endblock %}
 
 {% block body %}
-{# <img src="/img/3 .png" alt=""> #}
-    <h1>Backoffice</h1>
-        <a class="links" href="{{ path("jeux_index") }}">Jeux</a>
-		<a class="links" href="{{ path("prix_index") }}">Prix</a>
-		<a class="links" href="{{ path("tournois_index") }}">Tournois</a>
-        <a class="links"href="{{ path("user_index") }}">User</a>
-        <a class="links"href="{{ path("reservation_index") }}">Reservation</a>
+	<h1>Backoffice</h1>
 
+    <table class="table">
+            <tr>
+                <th class='bckoffice-th'>JEUX</th>
+                <td><a class="links" href="{{ path("jeux_index") }}">Liste des jeux</a></td>
+                <td><a class="links" href="{{ path("jeux_new") }}">Ajouter un jeu</a></td>
+            </tr>
+            <tr>
+                <th class='bckoffice-th'>PRIX</th>
+                <td><a class="links" href="{{ path("prix_index") }}">Liste des prix</a></td>
+                <td><a class="links" href="{{ path("prix_new") }}">Ajouter un prix</a></td>
+            </tr>
+            <tr>
+                <th class='bckoffice-th'>TOURNOIS</th>
+                <td><a class="links" href="{{ path("tournois_index") }}">Liste des tournois</a></td>
+                <td><a class="links" href="{{ path("tournois_new") }}">Ajouter un tournois</a></td>
+            </tr>
+            <tr>
+                <th class='bckoffice-th'>UTILISATEUR</th>
+                <td><a class="links" href="{{ path("user_index") }}">Liste des utilisateurs</a></td>
+                <td><a class="links" href="{{ path("user_new") }}">Ajouter un utilisateur</a></td>
+            </tr>
+            <tr>
+                <th class='bckoffice-th'>RESERVATION</th>
+                <td><a class="links" href="{{ path("reservation_index") }}">Liste des reservations</a></td>
+                <td><a class="links" href="{{ path("reservation_new") }}">Ajouter une reservation</a></td>
+            </tr>
+    </table>
 {% endblock %}
