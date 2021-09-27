@@ -1,7 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTDXHTML1.0Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+		<link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+	</head>
+	<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+		<table bgcolor="#343846" width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+			<tbody>
+				<tr>
+					<td style="
+                            color:#ddd;
+                            text-align: center;
+                        ">
+						<h5 style="color:#ddd;">Nouveau Message</h5>
+                    </td>
+                </tr>
+                <tr>
+					<td>
+						<p style="
+                            color:#ddd;
+                            text-align: center;
+                        " >
+							De : 
+                            Nom : {{ contact.nom }}<br>
+                            Prénom : {{ contact.prenom }}<br>
+                            Email : {{ contact.email }}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+						<p style="
+                            color:#ddd;
+                            text-align: center;
+                        " >Message : {{ contact.message }}</p> 
+                    </td>
+                </tr>
+            </tbody>
+		</table>
+	</body>
+</html>
+
+
+
+
 <h1>Nouveau Contact</h1>
 
 <p>Nom : {{ contact.nom }}</p>
 <p>Prénom : {{ contact.prenom }}</p>
-<p>Nom : {{ contact.email }}</p>
-<p>Nom : {{ contact.message }}</p> 
+<p>Email : {{ contact.email }}</p>
+
+
+<p>Message : {{ contact.message }}</p> 
 <!-- |raw -->

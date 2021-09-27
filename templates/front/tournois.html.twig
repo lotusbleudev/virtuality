@@ -1,7 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tournois{% endblock %}
+{% block title %}Nos tournois{% endblock %}
 
 {% block body %}
-<p>ceci est un tournois</p>
+    <h1>Nos tournois</h1>
+    {% for tournoi in tournois %}
+        {% include "tournois/vignette.html.twig" %}
+    {% endfor %}
+
+
 {% endblock %}

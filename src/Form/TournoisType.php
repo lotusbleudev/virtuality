@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Jeux;
 use App\Entity\Tournois;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +20,12 @@ class TournoisType extends AbstractType
             ->add('max_player')
             ->add('user')
             ->add('prix')
-            ->add('jeu')
+            ->add('jeu', EntityType ::class, [
+                "class" => Jeux::class,
+                "choice_label" => "titre",
+                "label" => "Jeu",
+                "placeholder" => "Choisir un jeu"
+            ])
         ;
     }
 

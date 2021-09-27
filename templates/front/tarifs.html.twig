@@ -1,8 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tarifs{% endblock %}
+{% block title %}Nos tarifs{% endblock %}
 
 {% block body %}
-<p>ceci est un tarifs</p>
+    <h1>Nos tarifs</h1>
+    {% for tarif in tarifs %}
+        {% include "prix/vignette.html.twig" %}
+    {% endfor %}
+
 
 {% endblock %}
