@@ -39,6 +39,11 @@ class Reservation
      */
     private $prix;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $prixTotal;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,6 +93,18 @@ class Reservation
     public function setPrix(?Prix $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getPrixTotal(): ?int
+    {
+        return $this->prixTotal;
+    }
+
+    public function setPrixTotal(int $prixTotal): self
+    {
+        $this->prixTotal = $prixTotal;
 
         return $this;
     }

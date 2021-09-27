@@ -46,6 +46,7 @@
 			<a class="links" href="{{ path("jeux") }}">Liste des jeux</a>
 			<a class="links" href="{{ path("tarifs") }}">Tarification</a>
 			<a class="links" href="{{ path("tournois") }}">Tournois</a>
+			<a class="links" href="{{ path("reservation") }}">Reserver</a>
 			{% if is_granted('ROLE_ADMIN') %}
 				<a class="links" href="{{ path("backoffice") }}">Backoffice</a>
 			{% endif %}

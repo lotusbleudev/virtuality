@@ -56,7 +56,7 @@ class ReservationController extends AbstractController
 
         $data = json_encode($crenaux); //permet de passer les données du array $crenaux dans le js du calendrier (voir calendar/index.js)
 
-        return $this->renderForm('reservation/new.html.twig', [
+        return $this->render('reservation/new.html.twig', [
             'reservation' => $reservation,
             'form' => $form,
             'data' => $data
