@@ -16,20 +16,22 @@ nav{
 		margin-left: 2vw;
 	}
 	.fa-user{
-		font-size: 22px;
+		font-size: 2vh;
 	}
 	.fa-sign-in-alt{
-		font-size: 22px;
+		font-size: 2vh;
+
 	}
 	.fa-sign-out-alt{
-		font-size: 22px;
+		font-size: 2vh;
+
 	}
 	.menu-right{
 		display: flex;
 		width: 350px;
-		justify-content: space-between;
-		margin-right: 20px;
+		justify-content: space-around;
 		align-items: center;
+		max-width: calc(30% - 2vw);
 		a{
 			font-size: 2vh;
 		}
