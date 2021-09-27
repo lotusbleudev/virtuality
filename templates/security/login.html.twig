@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!
+{% block title %}Connexion
 {% endblock %}
 
 {% block body %}
@@ -11,7 +11,7 @@
 				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 			{% endif %}
 
-			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+			<h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
 			<div class="form-control">
 				<label for="inputEmail" class="label-form">Adresse Email</label>
 				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class='input-form' autocomplete="email" required autofocus>

@@ -23,6 +23,8 @@ body {
 	width: 100%;
 	position: fixed;
 	top: 2rem;
+	z-index: 32;
+
 	// left: 44%;
 	transition: $transition-04s;
 	&.reduce{
