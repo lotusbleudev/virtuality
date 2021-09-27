@@ -27,9 +27,9 @@
             }}
 		</div>
 
-		<div class="form-control">
-			{{ form_row(registrationForm.plainPassword, {
-            label: 'Password',
+        <div class="form-control">
+            {{ form_row(registrationForm.nom, {
+            label: 'Nom',
             label_attr: {
                     class: 'label-form'
                     },
@@ -38,24 +38,11 @@
                     }
                 })
             }}
-		</div>
+        </div>
 
 		<div class="form-control">
 			{{ form_row(registrationForm.prenom, {
             label: 'Prénom',
-            label_attr: {
-                    class: 'label-form'
-                    },
-            attr: {
-                    class: 'input-form'
-                    }
-                })
-            }}
-		</div>
-
-		<div class="form-control">
-			{{ form_row(registrationForm.nom, {
-            label: 'Nom',
             label_attr: {
                     class: 'label-form'
                     },
@@ -79,9 +66,24 @@
             }}
 		</div>
 
+        
+		<div class="form-control">
+			{{ form_row(registrationForm.plainPassword, {
+            label: 'Password',
+            label_attr: {
+                    class: 'label-form'
+                    },
+            attr: {
+                    class: 'input-form'
+                    }
+                })
+            }}
+		</div>
+
 		<div>{{ form_row(registrationForm.agreeTerms) }}</div>
 
-		<button type="submit" class="butn">Register</button>
+		<button type="submit" class="butn">Inscription</button>
+        <span>Déja un compte?</span> <a href="{{path("app_login")}}"><button class="butn">Se connecter</button></a>
 
 
 		{{ form_end(registrationForm) }}
