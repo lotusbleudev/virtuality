@@ -26,10 +26,13 @@ nav{
 	}
 	.menu-right{
 		display: flex;
-		width: 10vw;
+		width: 350px;
 		justify-content: space-between;
-		margin-right: 2vw;
-		align-content: center;
+		margin-right: 20px;
+		align-items: center;
+		a{
+			font-size: 2vh;
+		}
 	}
 }
 .links{
@@ -42,8 +45,9 @@ nav{
 .ouverture {
 	text-align: center;
 	position: fixed;
-	top: 4rem;
+	top: 7vh;
 	z-index: 32;
+	font-size: 2vh;
 }
 .logs{
 	position: fixed;
@@ -105,7 +109,7 @@ nav{
 	cursor: pointer;
 	z-index: $layer3;
 	display: block;
-	height: 20px;
+	height: 10px;
 	position: relative;
 	top: 50%;
 	left: 50%;

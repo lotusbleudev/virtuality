@@ -8,14 +8,14 @@
 				</p>
 			{% endif %}
 			{% if app.user %}
-				<a class="links" href="{{path("app_logout")}}">
+				<a class="links" href="{{path("app_logout")}}">Deconnexion
 					<i class="fas fa-sign-out-alt"></i>
 				</a>
 			{% else %}
-				<a class="links" href="{{path("app_login")}}">
+				<a class="links" href="{{path("app_login")}}">Connexion
 					<i class="fas fa-user"></i>
 				</a>
-				<a class="links" href="{{ path("app_register") }}">
+				<a class="links" href="{{ path("app_register") }}">Inscription
 					<i class="fas fa-sign-in-alt"></i>
 				</a>
 			{% endif %}
