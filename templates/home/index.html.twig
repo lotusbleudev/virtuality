@@ -14,11 +14,11 @@
 			<div class="flipcard flipcard--red">
 				<div class="flipcard__inner">
 					<div class="__front">
-						<a href="{{ path('jeux_show', {'id': jeu.id}) }}"><img src="/img/{{jeu.imgCover}}" alt=""></a>
+						<a href="{{ path('jeu_detail', {'id': jeu.id}) }}"><img src="/img/{{jeu.imgCover}}" alt=""></a>
 					</div>
 
 					<div class="__back">
-						<a href="{{ path('jeux_show', {'id': jeu.id}) }}">
+						<a href="{{ path('jeu_detail', {'id': jeu.id}) }}">
 							<p>{{jeu.titre}}</p>
 							<p>{{jeu.description}}</p>
 						</a>
