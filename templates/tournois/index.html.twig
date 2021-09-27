@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tournois index{% endblock %}
+{% block title %}VIRTUALITY - Tous les tournois{% endblock %}
 
 {% block body %}
-    <h1>Tournois index</h1>
+    <h1>Tous les tournois</h1>
 
     <table class="table">
         <thead>
@@ -29,8 +29,8 @@
                 <td>{{ tournoi.user ? tournoi.user|join(', ') : '' }}</td>
                 <td>{{ tournoi.prix }}</td>
                 <td>
-                    <a href="{{ path('tournois_show', {'id': tournoi.id}) }}">show</a>
-                    <a href="{{ path('tournois_edit', {'id': tournoi.id}) }}">edit</a>
+                    <a href="{{ path('tournois_show', {'id': tournoi.id}) }}"><button class="butn">Voir</button></a>
+                    <a href="{{ path('tournois_edit', {'id': tournoi.id}) }}"><button class="butn">Editer</button></a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('tournois_new') }}">Create new</a>
+    <a href="{{ path('tournois_new') }}"><button class="butn">Nouveau</button></a>
 {% endblock %}

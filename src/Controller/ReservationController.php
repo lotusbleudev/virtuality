@@ -42,6 +42,11 @@ class ReservationController extends AbstractController
 
             return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
         }
+
+        return $this->render('reservation/new.html.twig', [
+            'reservation' => $reservation,
+            'form' => $form->createView()
+        ]);
     }
 
     #[Route('/{id}', name: 'reservation_show', methods: ['GET'])]

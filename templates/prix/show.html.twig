@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Prix{% endblock %}
+{% block title %}VIRTUALITY - Prix{% endblock %}
 
 {% block body %}
     <h1>Prix</h1>
@@ -22,9 +22,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('prix_index') }}">Retour a la liste</a>
+    <a href="{{ path('prix_index') }}"><button>Retour a la liste</button></a>
 
-    <a href="{{ path('prix_edit', {'id': prix.id}) }}">Modifier</a>
+    <a href="{{ path('prix_edit', {'id': prix.id}) }}"><button>Modifier</button></a>
 
     {{ include('prix/_delete_form.html.twig') }}
 {% endblock %}
