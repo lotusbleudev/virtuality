@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Reserver{% endblock %}
+{% block title %}Reservation{% endblock %}
 
 {% block stylesheets %}
 
@@ -16,7 +16,6 @@
 
     {{ include('reservation/_form.html.twig') }}
 
-    <a href="{{ path('reservation_index') }}">Voir la liste des reservation</a>
 
     <h2>Calendrier</h2>
     <div id="calendrier">
