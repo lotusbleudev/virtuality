@@ -4,33 +4,46 @@
 body {
 	font-family: $font-1;
 }
+nav{
+	position: fixed;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	top: 2vh;
+	z-index: $layer3;
+	.logo {
+		z-index: $layer3;
+		margin-left: 2vw;
+	}
+	.fa-user{
+		font-size: 22px;
+	}
+	.fa-sign-in-alt{
+		font-size: 22px;
+	}
+	.fa-sign-out-alt{
+		font-size: 22px;
+	}
+	.menu-right{
+		display: flex;
+		width: 10vw;
+		justify-content: space-between;
+		margin-right: 2vw;
+		align-content: center;
+	}
+}
 .links{
 	font-size: 3vh;
 	&:hover{
 		transition: $transition-04s;
 		color: $color-1;
 	}
-	
-}
-.logo {
-	position: fixed;
-	top: 1.3rem;
-	left: 2rem;
-	z-index: $layer3;
 }
 .ouverture {
 	text-align: center;
-	width: 100%;
 	position: fixed;
-	top: 2rem;
+	top: 4rem;
 	z-index: 32;
-
-	// left: 44%;
-	transition: $transition-04s;
-	&.reduce{
-		transition: $transition-04s;
-		width: 70%;
-	}
 }
 .logs{
 	position: fixed;
@@ -99,12 +112,7 @@ body {
 	transform: translate(-50%, -50%);
 
 	&__wrapper {
-		position: fixed;
-		top: 2vh;
-		right: 2vw;
 		z-index: $layer3;
-		width: 3rem;
-		height: 3rem;
 		&:hover{
 			.menu-button__bar{
 				transition: $transition-04s;

@@ -10,6 +10,9 @@ import "./styles/app.scss";
 
 // start the Stimulus application
 import "./bootstrap";
+require('@fortawesome/fontawesome-free/css/all.min.css');
+require('@fortawesome/fontawesome-free/js/all.js');
+
 
 // Animation -css du boutton dans le registrationForm
 var animateButton = function (e) {

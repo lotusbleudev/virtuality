@@ -1,22 +1,37 @@
 <header>
 	<nav>
 		<a class="logo links" href="{{ path("home") }}">VIRTUALITY</a>
-		{% if app.user %}
-			<p class="logs">Bonjour
-				<a href='{{path('profil')}}'>{{app.user.prenom}}</a>
-			</p>
-		{% endif %}
-		<p class="ouverture">Ouvert 7j/7 - De 9h00 à 20h00</p>
-		<div class="menu-button__wrapper">
-			<div class="menu-button">
-				<span class="menu-button__bar"></span>
-				<span class="menu-button__bar"></span>
-				<span class="menu-button__bar"></span>
+		<div class="menu-right">
+			{% if app.user %}
+				<p class="logs">Bonjour
+					<a href='{{path('profil')}}'>{{app.user.prenom}}</a>
+				</p>
+			{% endif %}
+			{% if app.user %}
+				<a class="links" href="{{path("app_logout")}}">
+					<i class="fas fa-sign-out-alt"></i>
+				</a>
+			{% else %}
+				<a class="links" href="{{path("app_login")}}">
+					<i class="fas fa-user"></i>
+				</a>
+				<a class="links" href="{{ path("app_register") }}">
+					<i class="fas fa-sign-in-alt"></i>
+				</a>
+			{% endif %}
+			<div class="menu-button__wrapper">
+				<div class="menu-button">
+					<span class="menu-button__bar"></span>
+					<span class="menu-button__bar"></span>
+					<span class="menu-button__bar"></span>
+				</div>
 			</div>
 		</div>
 	</nav>
 
 	<div class="menu-overlay">
+		<p class="ouverture">Ouvert 7j/7 - De 9h00 à 20h00</p>
+
 		<nav class="nav-login">
 			{% if app.user %}
 				<a class="links" href="{{path("app_logout")}}">Deconnexion</a>
@@ -36,8 +51,8 @@
 			{% endif %}
 		</nav>
 		{# <nav class="nav">
-					<p>BackOffice :</p>
-					<a href="{{ path("user_index") }}">Utilisateur</a>
-				</nav> #}
+							<p>BackOffice :</p>
+							<a href="{{ path("user_index") }}">Utilisateur</a>
+						</nav> #}
 	</div>
 </header>
