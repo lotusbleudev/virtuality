@@ -40,7 +40,7 @@ var input_date = document.getElementById("reservation_date");
 var input_showPrix = document.getElementById("prix");
 var input_joueurs = document.getElementById("reservation_nb_joueurs");
 var input_espace = document.getElementById("radio");
-
+var prixTotal;
 
 input_date.addEventListener("change", calcul_prix);
 input_joueurs.addEventListener("change", calcul_prix);

@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 
+use App\Entity\Reservation;
+use App\Form\ReservationType;
 use App\Repository\JeuxRepository;
 use App\Repository\PrixRepository;
 use App\Repository\TournoisRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class FrontController extends AbstractController
 {
@@ -32,6 +36,50 @@ class FrontController extends AbstractController
     {
         return $this->render('front/tournois.html.twig', [
             "tournois" => $tr->findAll()
+        ]);
+    }
+
+    #[Route('/reservation', name: 'reservation')]
+    public function reservation(Request $request, UserInterface $user, PrixRepository $pr): Response
+    {
+        $reservation = new Reservation();
+        $form = $this->createForm(ReservationType::class, $reservation);
+        $form->handleRequest($request);
+
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $date = $form->get('date')->getData();
+            $result = $date->format('Y-m-d H:i:s');
+
+            function isWeekend($d) {
+                $weekDay = date('w', strtotime($d));
+                return ($weekDay == 0 || $weekDay == 6);
+            }
+            $isWe = isWeekend($result);
+
+            if($isWe){
+                $prix = $pr->find('4');
+            }else{
+                $prix = $pr->find('1');
+            }
+
+            $prixTotal = $prix->getMontant() * $form->get('nb_joueurs')->getData();
+            
+            $reservation->setPrixTotal($prixTotal);
+            $reservation->setPrix($prix);
+            $reservation->setUser($user);
+            $reservation->setDate($date);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($reservation);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('profil', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('front/reservation.html.twig', [
+            'reservation' => $reservation,
+            'form' => $form->createView(),
         ]);
     }
 }
