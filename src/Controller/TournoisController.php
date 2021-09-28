@@ -33,6 +33,8 @@ class TournoisController extends AbstractController
             $entityManager->persist($tournoi);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Félicitation!! Vous vous êtes bien inscrit.e au tournois.');
+
             return $this->redirectToRoute('tournois_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -59,6 +61,8 @@ class TournoisController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Les modifictions dans ce tournois sont réalisées.');
+
             return $this->redirectToRoute('tournois_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -75,6 +79,9 @@ class TournoisController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($tournoi);
             $entityManager->flush();
+
+            $this->addFlash('success', 'La suppression du tournois est éffectuée.');
+
         }
 
         return $this->redirectToRoute('tournois_index', [], Response::HTTP_SEE_OTHER);

@@ -109,7 +109,7 @@ class JeuxController extends AbstractController
             $entityManager->remove($jeux);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Votre ajout a été réalisé avec succès');
+            $this->addFlash('success', 'La suppression a été réalisé avec succès');
 
         }
 
