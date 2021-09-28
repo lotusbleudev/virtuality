@@ -41,14 +41,12 @@ class ReservationController extends AbstractController
 
             $this->addFlash('success', 'Félicitation vous avez bien réserver un créneau.');
 
-            $contact = $form->getData();
-
             //Ici nous enverrons le mail
             // dd($contact);
 
             $message = (new \Swift_Message('Confirmation de votre réseravation'))
                 ->setFrom('virtuality255@gmail.com')
-                ->setTo(array($contact['email'])) //error : Cannot use object of type App\Entity\Reservation as array
+                ->setTo($reservation->getUser()->getEmail()) //error : Cannot use object of type App\Entity\Reservation as array
                 ->setBody(
                     $this->renderView(
                         'reservation/confirmation_reservation.html.twig', compact('contact')
