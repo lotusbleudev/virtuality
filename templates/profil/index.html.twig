@@ -5,31 +5,49 @@
 {% block body %}
 
 <h1>Bonjour {{app.user.prenom}}</h1>
-<h2>Voici vos informations:</h2>
-<ul>
-    <li>Prenom : {{app.user.prenom}}</li>
-    <li>Nom : {{app.user.nom}}</li>
-    <li>Téléphone : {{app.user.telephone}}</li>
-    <li>Adresse mail : {{app.user.email}}</li>
-</ul>
+<div class="tableProfil">
+    <h3>Paramètre du profil</h3>
+    <table>
+        <tr>
+            <td>Prénom </td>
+            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.prenom}}"></td>
 
-<p>Vos reservations:</p>
-<table class="table">
+        </tr>
+        <tr>
+            <td>Nom </td>
+            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.nom}}"></td>
+        </tr>
+        <tr>
+            <td>Téléphone </td>
+            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.telephone}}"></td>
+        </tr>
+        <tr>
+            <td>Adresse mail </td>
+            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.email}}"></td>
+        </tr>
+    </table>
+    
+    <input type="submit" class="butn" value="Enregistrer les modification">
+</div>
+<div class="tableProfil">
+    <h3>Réservation</h3>
+    <table class="table">
     <tr>
-        <td>Reservation</td>
-        <td>Date</td>
-        <td>Nombre de joueurs</td>
-        <td>Prix total</td>
+        {# <td>Reservation</td> #}
+        <th>Date</th>
+        <th>Nombre de joueurs</th>
+        <th>Prix total</th>
     </tr>
     {% for reservation in app.user.reservations %}
         <tr>
-            <td>Reservation {{reservation.id}}</td>
             <td>{{reservation.date|date("d/m/Y")}} à {{ reservation.date|date('H:i') }}</td>    
             <td>{{reservation.nbJoueurs}} joueurs</td>
             <td>{{reservation.prixTotal}} €</td>
         </tr>
     {% endfor %}
 </table>
+</div>
+
 
 {% endblock %}
 
