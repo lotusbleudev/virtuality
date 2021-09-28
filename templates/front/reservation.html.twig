@@ -5,7 +5,11 @@
 
 {% block body %}
     <h1>Reserver</h1>
-
+    <div class="information">
+        <p>Vous pouvez reserver un crenaux pour vous amusez entre amis sans être en manque de place ou simplement pour vous entrainez afin de remporter la recompense de notre prochain tournois !</p>
+        <p>Les crenaux sont reservable pour 1h, si vous le souhaitez, vous pouvez reservé plusieurs crénaux.</p>
+        <p>En cas d'indisponibilité de votre part, merci de nous prevenir au minimum <span>24 heures</span> avant la date de réservation, soit par message dans l'onglet <span><a href="{{ path("contact") }}">Contact</a></span>, soit par téléphone. </p>
+    </div>
     {{ include('reservation/_form.html.twig') }}
 
 
