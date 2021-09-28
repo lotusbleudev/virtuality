@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Reservation;
 use App\Form\ReservationType;
 use App\Repository\ReservationRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,13 +24,14 @@ class ReservationController extends AbstractController
     }
 
     #[Route('/new', name: 'reservation_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserInterface $user): Response
+    public function new(Request $request, UserInterface $user, \Swift_Mailer $mailer): Response
     {
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
 
-        
+        // $user = new User(); //pour la récupération du mail et l'envoi du mail de confirmation de la réservation
+
         if ($form->isSubmitted() && $form->isValid()) {
             $reservation->setUser($user);
             $entityManager = $this->getDoctrine()->getManager();
@@ -39,6 +39,24 @@ class ReservationController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Félicitation vous avez bien réserver un créneau.');
+
+            $contact = $form->getData();
+
+            //Ici nous enverrons le mail
+            // dd($contact);
+
+            $message = (new \Swift_Message('Confirmation de votre réseravation'))
+                ->setFrom('virtuality255@gmail.com')
+                ->setTo($contact['email'])
+                ->setBody(
+                    $this->renderView(
+                        'reservation/confirmation_reservation.html.twig', compact('contact')
+                    ),
+                    'text/html' // on lui dit que c'est des text/html car on veut qu'il prend en compte les balises dans notre vue 'confirmation_reservation'
+                )
+            ; 
+            // on envoie le message
+            $mailer->send($message);
 
             return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
         }
