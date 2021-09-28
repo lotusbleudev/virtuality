@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Jeux;
+use App\Entity\Places;
 use App\Entity\Reservation;
 use App\Form\ReservationType;
 use App\Repository\JeuxRepository;
+use App\Repository\PlacesRepository;
 use App\Repository\PrixRepository;
 use App\Repository\TournoisRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -53,11 +55,13 @@ class FrontController extends AbstractController
     }
 
     #[Route('/reservation', name: 'reservation')]
-    public function reservation(Request $request, UserInterface $user, PrixRepository $pr): Response
+    public function reservation(Request $request, UserInterface $user, PrixRepository $pr, PlacesRepository $place): Response
     {
         $reservation = new Reservation();
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
+
+        
 
         
         if ($form->isSubmitted() && $form->isValid()) {
@@ -83,11 +87,32 @@ class FrontController extends AbstractController
             $reservation->setUser($user);
             $reservation->setDate($date);
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($reservation);
-            $entityManager->flush();
+            
+            $dispo = $place->findByJour($date);
 
-            return $this->redirectToRoute('profil', [], Response::HTTP_SEE_OTHER);
+            if(empty($dispo)){
+                $d = new Places();
+                $d->setDate($date);
+                $d->setDispos(20);
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($d);
+                $entityManager->flush();
+                $dispo = $place->findByJour($date);
+            }
+
+            if(($dispo[0]->getDispos() - $form->get('nb_joueurs')->getData()) <= 0){
+                // on ne peut pas faire la reservation
+            }else{
+                $dispo[0]->setDispos($dispo[0]->getDispos() - $form->get('nb_joueurs')->getData());
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($reservation);
+                $entityManager->flush();
+    
+                return $this->redirectToRoute('profil', [], Response::HTTP_SEE_OTHER);
+            }
+
         }
 
         return $this->render('front/reservation.html.twig', [

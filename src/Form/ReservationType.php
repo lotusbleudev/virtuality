@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\GreaterThan;
 
 class ReservationType extends AbstractType
 {
@@ -20,7 +21,10 @@ class ReservationType extends AbstractType
                 'minutes' => [00],
                 'attr' => [
                     
-                ] //greaterthan , lessthan
+                ],
+                'constraints' => [
+                    new GreaterThan(date("Y/m/d"))
+                ]
                 
             ])
             ->add('nb_joueurs', IntegerType::class, [
