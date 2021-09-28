@@ -130,7 +130,6 @@ a {
 
 // END RESET
 
-
 header {
 	display: unset;
 	min-height: 5rem;
@@ -152,8 +151,7 @@ body {
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
-		min-height: calc(95vh - 254px );
-
+		min-height: calc(95vh - 254px);
 
 		h1 {
 			color: white;
@@ -408,7 +406,7 @@ body {
 		.table {
 			border-collapse: collapse;
 			width: 80%;
-			
+
 			td {
 				width: 100px;
 				border: 1px solid $color-2;
@@ -428,7 +426,7 @@ body {
 				background-color: $color-3;
 				color: white;
 			}
-			.bckoffice-th{
+			.bckoffice-th {
 				width: 30%;
 			}
 			tr:nth-child(even) {
@@ -489,22 +487,21 @@ body {
 			align-items: center;
 		}
 
-		
-	#tarifsFront{
-		justify-content: center;
-		display: flex;
-		width: 80%;
-
-		div{
-			width: 30%;
+		#tarifsFront {
+			justify-content: center;
 			display: flex;
-			flex-direction: column;
-			align-items: center;
-			h2{
-				margin-bottom: 5vh;
+			width: 80%;
+
+			div {
+				width: 30%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				h2 {
+					margin-bottom: 5vh;
+				}
 			}
 		}
-	}
 	}
 }
 
@@ -696,14 +693,11 @@ body {
 		width: 55%;
 		display: flex;
 	}
-
 }
-
 
 //-----------------------------------PAGE CGU------------------------------------------
 
 #cgu {
-
 	width: 80%;
 	text-align: justify;
 
@@ -727,4 +721,16 @@ body {
 		margin-top: 10vh;
 		margin-bottom: 5vh;
 	}
+}
+
+//-----------------------------------Flash_messages------------------------------------------
+.flash_css {
+	background-color: #2d04bf69;
+	color: #c77ed0;
+	text-align: center;
+	width: 80%;
+	font-size: 25px;
+	margin-top: 10vh;
+	margin-bottom: 5vh;
+	padding: 20px;
 }
