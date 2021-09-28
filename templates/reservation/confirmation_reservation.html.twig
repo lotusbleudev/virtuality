@@ -14,7 +14,18 @@
                             color:#ddd;
                             text-align: center;
                         ">
-						<h5 style="color:#ddd;">Confirmation de réservation</h5>
+						<h5 style="color:#ddd;">Confirmation de votre réservation</h5>
+                    </td>
+                </tr>
+                <tr>
+					<td
+                        >
+						<p style="
+                            color:#ddd;
+                            text-align: center;
+                        " >
+                        Nous vous remercions {{ reservation.user.prenom }}, de l'intrêt que vous portez à nos offres.
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -24,23 +35,14 @@
                             text-align: center;
                         " >
                             
-							Infos de votre réservation : <br>
-                            {{ app.user.prenom }}
-                            Date et heure de votre créneau : {{ contact.date.date }} à {{ contact.date.time.hour }}<br>
-                            Choix d'espace : {{ contact.espace }} <br>
-                            Nombre de participant.es : {{ contact.nb_joueurs }}<br>
-                            Vous avez payés : {{ contact.prix_total }}</p>
+							Et voici les infos de votre réservation : <br>
+                            
+                            Date et heure de votre créneau : {{ reservation.date|date('d/m/Y') }} à {{ reservation.date|date('H:i') }}<br>
+                            {# Choix d'espace : {% if condition %}{% endif %} <br> #}
+                            Nombre de participant.es : {{ reservation.nbJoueurs }}<br>
+                            Vous avez payé : {{ reservation.prixTotal }} €</p>
                     </td>
                 </tr>
-                {# <tr>
-                    <td>
-						<p style="
-                            color:#ddd;
-                            text-align: justify;
-                        " >Message : <br>
-                        {{ contact.message }}</p> 
-                    </td>
-                </tr> #}
             </tbody>
 		</table>
 	</body>
