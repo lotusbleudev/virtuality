@@ -5,16 +5,19 @@ namespace App\Controller;
 use App\Entity\Jeux;
 use App\Entity\Places;
 use App\Entity\Reservation;
+use App\Entity\Tournois;
 use App\Form\ReservationType;
 use App\Repository\JeuxRepository;
 use App\Repository\PlacesRepository;
 use App\Repository\PrixRepository;
 use App\Repository\TournoisRepository;
+use Doctrine\ORM\EntityManagerInterface as EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 
 class FrontController extends AbstractController
 {
@@ -39,7 +42,7 @@ class FrontController extends AbstractController
     }
 
     #[Route('jeu/{id}', name: 'jeu_detail', methods: ['GET'])]
-    public function show(Jeux $jeux): Response
+    public function jeu_detail(Jeux $jeux): Response
     {
         return $this->render('front/detail-jeu.html.twig', [
             'jeux' => $jeux,
@@ -52,6 +55,32 @@ class FrontController extends AbstractController
         return $this->render('front/tournois.html.twig', [
             "tournois" => $tr->findAll()
         ]);
+    }
+
+    #[Route('tournois/{id}', name: 'tournoi_detail')]
+    public function tournois_detail(Tournois $tournois): Response
+    {
+
+        return $this->render('front/detail-tournoi.html.twig', [
+            "tournoi" => $tournois, 
+        ]);
+    }
+
+    #[Route('tournois/inscription/{id}', name: 'inscription_tournoi')]
+    public function tournois_inscription(UserInterface $user, TournoisRepository $tr, EntityManager $em, $id): Response
+    {
+        $tournoi = $tr->find($id);
+        $maxJoueurs = $tournoi->getMaxPlayer();
+        $currentJoueurs = count($tournoi->getJoueurs());
+
+        if($currentJoueurs == $maxJoueurs){
+
+        }else{
+            $tournoi->addJoueur($user);
+            $em->persist($tournoi);
+            $em->flush();
+        }
+        return $this->redirectToRoute("tournois");
     }
 
     #[Route('/reservation', name: 'reservation')]
