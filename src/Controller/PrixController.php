@@ -33,6 +33,8 @@ class PrixController extends AbstractController
             $entityManager->persist($prix);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Votre ajout a été réalisé avec succès'); 
+
             return $this->redirectToRoute('prix_index', [], Response::HTTP_SEE_OTHER);
         }
 

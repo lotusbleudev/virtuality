@@ -106,6 +106,9 @@ class JeuxController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($jeux);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Votre ajout a été réalisé avec succès');
+
         }
 
         return $this->redirectToRoute('jeux_index', [], Response::HTTP_SEE_OTHER);

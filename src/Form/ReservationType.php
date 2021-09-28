@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\GreaterThan;
 
 class ReservationType extends AbstractType
 {
@@ -18,10 +19,9 @@ class ReservationType extends AbstractType
                 'date_widget' => 'single_text', 
                 'hours' => range(9, 19),
                 'minutes' => [00],
-                'attr' => [
-                    
-                ] //greaterthan , lessthan
-                
+                'constraints' => [
+                    new GreaterThan(['today', '+00 hours'])
+                ]
             ])
             ->add('nb_joueurs', IntegerType::class, [
                 'attr' => [
@@ -29,7 +29,8 @@ class ReservationType extends AbstractType
                     'max' => 13,
                     'value' => 1
                 ]
-            ]);
+            ])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
