@@ -732,9 +732,20 @@ body {
 }
 
 //-----------------------------------Flash_messages------------------------------------------
-.flash_css {
-	background-color: #2d04bf69;
+.flash-success {
+	background-color: $black;
 	color: #c77ed0;
+	text-align: center;
+	width: 80%;
+	font-size: 25px;
+	margin-top: 10vh;
+	margin-bottom: 5vh;
+	padding: 20px;
+}
+
+.flash-error {
+	background-color: $black;
+	color: #dd2424;
 	text-align: center;
 	width: 80%;
 	font-size: 25px;

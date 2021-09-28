@@ -64,9 +64,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $reservations;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Tournois::class, mappedBy="Joueurs")
+     */
+    private $tournois;
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+        $this->tournois = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -231,6 +237,33 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             if ($reservation->getUser() === $this) {
                 $reservation->setUser(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tournois[]
+     */
+    public function getTournois(): Collection
+    {
+        return $this->tournois;
+    }
+
+    public function addTournoi(Tournois $tournoi): self
+    {
+        if (!$this->tournois->contains($tournoi)) {
+            $this->tournois[] = $tournoi;
+            $tournoi->addJoueur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTournoi(Tournois $tournoi): self
+    {
+        if ($this->tournois->removeElement($tournoi)) {
+            $tournoi->removeJoueur($this);
         }
 
         return $this;

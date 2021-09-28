@@ -18,7 +18,7 @@ class TournoisType extends AbstractType
             ->add('date_debut')
             ->add('description')
             ->add('max_player')
-            ->add('user')
+    
             ->add('prix')
             ->add('jeu', EntityType ::class, [
                 "class" => Jeux::class,

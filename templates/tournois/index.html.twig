@@ -13,7 +13,7 @@
                 <th>Date_debut</th>
                 <th>Description</th>
                 <th>Max_player</th>
-                <th>User</th>
+                {# <th>User</th> #}
                 <th>Prix</th>
                 <th>actions</th>
             </tr>
@@ -26,7 +26,7 @@
                 <td>{{ tournoi.dateDebut ? tournoi.dateDebut|date('Y-m-d') : '' }}</td>
                 <td>{{ tournoi.description }}</td>
                 <td>{{ tournoi.maxPlayer }}</td>
-                <td>{{ tournoi.user ? tournoi.user|join(', ') : '' }}</td>
+                {# <td>{{ tournoi.Joueurs.prenom ? tournoi.Joueur.prenom|join(', ') : '' }}</td> #}
                 <td>{{ tournoi.prix }}</td>
                 <td>
                     <a href="{{ path('tournois_show', {'id': tournoi.id}) }}"><button class="butn">Voir</button></a>

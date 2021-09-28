@@ -1,11 +1,13 @@
 <div class="vignette">
 
     <div class="vignette-content">
-        <div>
-            <p class="titre">{{ tournoi.jeu.titre }}</p>
-            <p class="type">{{ tournoi.description }}</p>
-            <p class="type">{{tournoi.prix}}</p>
-        </div>
+        <a href="{{ path('tournoi_detail', {'id': tournoi.id}) }}">
+            <div>
+                <p class="titre">{{ tournoi.jeu.titre }}</p>
+                <p class="type">{{ tournoi.description }}</p>
+                <p class="type">{{tournoi.prix}}</p>
+            </div>
+        </a>
     </div>
 
 </div>

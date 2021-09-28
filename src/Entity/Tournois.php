@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TournoisRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,15 +45,21 @@ class Tournois
      */
     private $jeu;
 
-    /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $user = [];
 
     /**
      * @ORM\Column(type="decimal", precision=10, scale=2)
      */
     private $prix;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="tournois")
+     */
+    private $Joueurs;
+
+    public function __construct()
+    {
+        $this->Joueurs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -118,17 +126,6 @@ class Tournois
         return $this;
     }
 
-    public function getUser(): ?array
-    {
-        return $this->user;
-    }
-
-    public function setUser(?array $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     public function getPrix(): ?string
     {
@@ -138,6 +135,30 @@ class Tournois
     public function setPrix(string $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getJoueurs(): Collection
+    {
+        return $this->Joueurs;
+    }
+
+    public function addJoueur(User $joueur): self
+    {
+        if (!$this->Joueurs->contains($joueur)) {
+            $this->Joueurs[] = $joueur;
+        }
+
+        return $this;
+    }
+
+    public function removeJoueur(User $joueur): self
+    {
+        $this->Joueurs->removeElement($joueur);
 
         return $this;
     }

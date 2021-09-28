@@ -5,16 +5,19 @@ namespace App\Controller;
 use App\Entity\Jeux;
 use App\Entity\Places;
 use App\Entity\Reservation;
+use App\Entity\Tournois;
 use App\Form\ReservationType;
 use App\Repository\JeuxRepository;
 use App\Repository\PlacesRepository;
 use App\Repository\PrixRepository;
 use App\Repository\TournoisRepository;
+use Doctrine\ORM\EntityManagerInterface as EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 
 class FrontController extends AbstractController
 {
@@ -39,7 +42,7 @@ class FrontController extends AbstractController
     }
 
     #[Route('jeu/{id}', name: 'jeu_detail', methods: ['GET'])]
-    public function show(Jeux $jeux): Response
+    public function jeu_detail(Jeux $jeux): Response
     {
         return $this->render('front/detail-jeu.html.twig', [
             'jeux' => $jeux,
@@ -52,6 +55,32 @@ class FrontController extends AbstractController
         return $this->render('front/tournois.html.twig', [
             "tournois" => $tr->findAll()
         ]);
+    }
+
+    #[Route('tournois/{id}', name: 'tournoi_detail')]
+    public function tournois_detail(Tournois $tournois): Response
+    {
+
+        return $this->render('front/detail-tournoi.html.twig', [
+            "tournoi" => $tournois, 
+        ]);
+    }
+
+    #[Route('tournois/inscription/{id}', name: 'inscription_tournoi')]
+    public function tournois_inscription(UserInterface $user, TournoisRepository $tr, EntityManager $em, $id): Response
+    {
+        $tournoi = $tr->find($id);
+        $maxJoueurs = $tournoi->getMaxPlayer();
+        $currentJoueurs = count($tournoi->getJoueurs());
+
+        if($currentJoueurs == $maxJoueurs){
+
+        }else{
+            $tournoi->addJoueur($user);
+            $em->persist($tournoi);
+            $em->flush();
+        }
+        return $this->redirectToRoute("tournois");
     }
 
     #[Route('/reservation', name: 'reservation')]
@@ -102,7 +131,7 @@ class FrontController extends AbstractController
 
             if (($dispo[0]->getDispos() - $form->get('nb_joueurs')->getData()) <= 0) {
 
-                $this->addFlash('error', 'Plus de places disponibles pour cette date et ce créneau. Essayez sur un autre créneau');
+                $this->addFlash('error', 'Oops! Plus de places disponibles pour cette date et ce créneau 😥. Essayez sur un autre créneau');
                 // on ne peut pas faire la reservation
             } else {
                 $dispo[0]->setDispos($dispo[0]->getDispos() - $form->get('nb_joueurs')->getData());
@@ -111,20 +140,20 @@ class FrontController extends AbstractController
                 $entityManager->persist($reservation);
                 $entityManager->flush();
 
-                $this->addFlash('success', 'Félicitation vous avez bien réserver un créneau.');
+                $this->addFlash('success', 'Félicitation! Vous avez bien réserver un créneau.');
 
                 $contact = $form->getData();
 
                 //Ici nous enverrons le mail
                 // dd($contact);
 
-                $message = (new \Swift_Message('Confirmation de votre réseravation'))
+                $message = (new \Swift_Message('Confirmation de votre réservation'))
                     ->setFrom('virtuality255@gmail.com')
-                    ->setTo(array($contact['email'])) //error : Cannot use object of type App\Entity\Reservation as array
+                    ->setTo($reservation->getUser()->getEmail())
                     ->setBody(
                         $this->renderView(
                             'reservation/confirmation_reservation.html.twig',
-                            compact('contact')
+                            compact('reservation')
                         ),
                         'text/html' // on lui dit que c'est des text/html car on veut qu'il prend en compte les balises dans notre vue 'confirmation_reservation'
                     );
