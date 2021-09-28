@@ -32,7 +32,7 @@ class ReservationController extends AbstractController
         $form->handleRequest($request);
 
         // $user = new User(); //pour la récupération du mail et l'envoi du mail de confirmation de la réservation
-        
+
         if ($form->isSubmitted() && $form->isValid()) {
             $reservation->setUser($user);
             $entityManager = $this->getDoctrine()->getManager();
@@ -48,7 +48,7 @@ class ReservationController extends AbstractController
 
             $message = (new \Swift_Message('Confirmation de votre réseravation'))
                 ->setFrom('virtuality255@gmail.com')
-                ->setTo($contact['email'])
+                ->setTo(array($contact['email'])) //error : Cannot use object of type App\Entity\Reservation as array
                 ->setBody(
                     $this->renderView(
                         'reservation/confirmation_reservation.html.twig', compact('contact')

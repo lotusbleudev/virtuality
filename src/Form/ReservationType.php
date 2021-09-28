@@ -16,16 +16,14 @@ class ReservationType extends AbstractType
     {
         $builder
             ->add('date', DateTimeType::class, [
-                'date_widget' => 'single_text', 
+                'date_widget' => 'single_text',
                 'hours' => range(9, 19),
                 'minutes' => [00],
-                'attr' => [
-                    
-                ],
+                'attr' => [],
                 'constraints' => [
-                    new GreaterThan(date("Y/m/d"))
+                    new GreaterThan(date("Y/m/d"), null, 'Veuillez choisir une date valide')
                 ]
-                
+
             ])
             ->add('nb_joueurs', IntegerType::class, [
                 'attr' => [
@@ -33,8 +31,7 @@ class ReservationType extends AbstractType
                     'max' => 13,
                     'value' => 1
                 ]
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
