@@ -83,6 +83,18 @@ class FrontController extends AbstractController
         return $this->redirectToRoute("tournois");
     }
 
+    #[Route('tournois/desinscription/{id}', name: 'desinscription_tournoi')]
+    public function tournois_desinscription(UserInterface $user, TournoisRepository $tr, EntityManager $em, $id): Response
+    {
+        $tournoi = $tr->find($id);
+
+            $tournoi->removeJoueur($user);
+            $em->persist($tournoi);
+            $em->flush();
+        
+        return $this->redirectToRoute("tournois");
+    }
+
     #[Route('/reservation', name: 'reservation')]
     public function reservation(Request $request, UserInterface $user, PrixRepository $pr, PlacesRepository $place, \Swift_Mailer $mailer): Response
     {
