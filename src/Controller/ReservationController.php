@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Reservation;
 use App\Form\ReservationType;
+use App\Repository\PlacesRepository;
 use App\Repository\ReservationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +32,7 @@ class ReservationController extends AbstractController
         $form->handleRequest($request);
 
         // $user = new User(); //pour la récupération du mail et l'envoi du mail de confirmation de la réservation
-
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $reservation->setUser($user);
             $entityManager = $this->getDoctrine()->getManager();

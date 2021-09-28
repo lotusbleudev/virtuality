@@ -19,9 +19,13 @@ class ReservationType extends AbstractType
                 'date_widget' => 'single_text', 
                 'hours' => range(9, 19),
                 'minutes' => [00],
+                'attr' => [
+                    
+                ],
                 'constraints' => [
-                    new GreaterThan(['today', '+00 hours'])
+                    new GreaterThan(date("Y/m/d"))
                 ]
+                
             ])
             ->add('nb_joueurs', IntegerType::class, [
                 'attr' => [
