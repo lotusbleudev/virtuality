@@ -85,6 +85,8 @@ class ReservationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'La modification a été réalisé avec succès.');
+
             return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -101,6 +103,8 @@ class ReservationController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($reservation);
             $entityManager->flush();
+
+            $this->addFlash('success', 'La suppression a été réalisé avec succès.');
         }
 
         return $this->redirectToRoute('reservation_index', [], Response::HTTP_SEE_OTHER);

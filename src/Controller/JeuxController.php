@@ -64,6 +64,8 @@ class JeuxController extends AbstractController
             $entityManager->persist($jeux);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'ajout a été réalisé avec succès.');
+
             return $this->redirectToRoute('jeux_index', [], Response::HTTP_SEE_OTHER);
         }
 

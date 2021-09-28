@@ -61,6 +61,7 @@ class PrixController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'La modification a été réalisé avec succès.');
             return $this->redirectToRoute('prix_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -77,6 +78,8 @@ class PrixController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($prix);
             $entityManager->flush();
+
+            $this->addFlash('success', 'La suppression a été réalisé avec succès.');
         }
 
         return $this->redirectToRoute('prix_index', [], Response::HTTP_SEE_OTHER);

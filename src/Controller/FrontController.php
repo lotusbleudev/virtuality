@@ -120,7 +120,7 @@ class FrontController extends AbstractController
 
                 $message = (new \Swift_Message('Confirmation de votre réseravation'))
                     ->setFrom('virtuality255@gmail.com')
-                    ->setTo(array($contact['email']))
+                    ->setTo(array($contact['email'])) //error : Cannot use object of type App\Entity\Reservation as array
                     ->setBody(
                         $this->renderView(
                             'reservation/confirmation_reservation.html.twig',
