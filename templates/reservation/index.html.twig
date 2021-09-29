@@ -21,8 +21,8 @@
                 <td>{{ reservation.date ? reservation.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ reservation.nbJoueurs }}</td>
                 <td>
-                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}"><button>Voir</button></a>
-                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}"><button>Editer</button></a>
+                    <a href="{{ path('reservation_show', {'id': reservation.id}) }}"><button class="butn">Voir</button></a>
+                    <a href="{{ path('reservation_edit', {'id': reservation.id}) }}"><button class="butn">Editer</button></a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('reservation_new') }}"><button>Créer un nouveau</button></a>
+    <a href="{{ path('reservation_new') }}"><button class="butn">Créer un nouveau</button></a>
 {% endblock %}

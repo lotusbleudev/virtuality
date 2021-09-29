@@ -28,6 +28,8 @@ class JeuxType extends AbstractType
                     'multiple' => 'multiple'
                 )
             ))
+            ->add('min_joueur')
+            ->add('max_joueur')
         ;
     }
 
