@@ -8,9 +8,9 @@
             <p class="description">{{ jeu.description }}</p>
         </div>
         {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('jeux_show', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
+        <a class="links" href="{{ path('jeux_show', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
         {% else %}
-        <a href="{{ path('jeu_detail', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
+        <a class="links" href="{{ path('jeu_detail', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
         {% endif %}
     </div>
 
