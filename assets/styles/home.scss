@@ -26,21 +26,24 @@
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 4vw;
     text-align: center;
     margin: 50px 30px 70px 30px;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 3vw;
 }
 
 .box1 {
 	display: flex;
-	margin: 20px 80px;
+	margin: 1vh 15vh;
 	justify-content: space-between;
 	align-items: center;
-	
+	align-items: center;
+	border: 3px solid $color-6;
+	background-color: rgba($color-4, $alpha: 0.4);
+	border-radius: 15px;
     
     p {
 		text-align: justify;
@@ -48,6 +51,7 @@ h3 {
 
 	.imgbox {
 		width: 40%;
+		margin: 5vh;
 	}
 
 	.pBox {
@@ -55,8 +59,12 @@ h3 {
 		animation-name: glissementDroit;
 		animation-iteration-count: 1;
 		animation-timing-function: ease-in-out;
-        margin: 10%;
+        margin: 5vh 5vh 5vh 0vh;;
 		width: 50%;
+		p{
+			font-size: 2vw;
+			color: #dddddd;
+		}
 
 		@keyframes glissementDroit {
 			from {
@@ -76,8 +84,12 @@ h3 {
 		animation-name: glissementGauche;
 		animation-iteration-count: 1;
 		animation-timing-function: ease-in-out;
-        margin: 10%;
+        margin: 5vh 0vh 5vh 5vh;;
 		width: 50%;
+		p{
+			font-size: 1.5vw;
+			color: #dddddd;
+		}
 
 		@keyframes glissementGauche {
 			from {
