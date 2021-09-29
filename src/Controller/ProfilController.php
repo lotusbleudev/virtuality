@@ -15,14 +15,18 @@ class ProfilController extends AbstractController
     #[Route('/profil', name: 'profil')]
     public function index(Request $request, UserInterface $u, UserRepository $ur, EntityManagerInterface $em): Response
     {
-        $user = $ur->find($u);
-        $user->setPrenom($request->query->get('prenom'));
-        $user->setNom($request->query->get('nom'));
-        $user->setTelephone($request->query->get('telephone'));
 
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->flush();
+        if($request->query->get('submit')){
+
+            $user = $ur->find($u);
+            $user->setPrenom($request->query->get('prenom'));
+            $user->setNom($request->query->get('nom'));
+            $user->setTelephone($request->query->get('telephone'));
+            
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+        }
 
         return $this->render('profil/index.html.twig', [
             
