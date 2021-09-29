@@ -7,7 +7,11 @@
             <p class="type">{{ jeu.type }}</p>
             <p class="description">{{ jeu.description }}</p>
         </div>
-        <a href="{{ path('jeu_detail', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a class="links" href="{{ path('jeux_show', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
+        {% else %}
+        <a class="links" href="{{ path('jeu_detail', {'id': jeu.id}) }}"><p>Plus d'info</p></a>
+        {% endif %}
     </div>
 
 </div>

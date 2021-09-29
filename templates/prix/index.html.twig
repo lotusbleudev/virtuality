@@ -21,8 +21,8 @@
                 <td>{{ prix.titre }}</td>
                 <td>{{ prix.montant }}</td>
                 <td>
-                    <a href="{{ path('prix_show', {'id': prix.id}) }}"><button>Voir</button></a>
-                    <a href="{{ path('prix_edit', {'id': prix.id}) }}"><button>Editer</button></a>
+                    <a href="{{ path('prix_show', {'id': prix.id}) }}"><button class="butn">Voir</button></a>
+                    <a href="{{ path('prix_edit', {'id': prix.id}) }}"><button class="butn">Editer</button></a>
                     
                 </td>
             </tr>
@@ -34,5 +34,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('prix_new') }}"><button>Créer un nouveau</button></a>
+    <a href="{{ path('prix_new') }}"><button class="butn">Créer un nouveau tarif</button></a>
 {% endblock %}

@@ -5,19 +5,20 @@
 {% block body %}
 
     <section class ="jeuShow">
-        <div>
-            <img src="/img/{{jeux.imgCover}}" alt="" class="coverImg">
+        <div class="vignette">
+            <img src="/img/{{jeux.imgCover}}" alt="">
             <div>
                 <h1>{{jeux.titre}}</h1>
                 <h2>Edité par {{jeux.editeur}}</h2>
                 <p>{{jeux.type}} sorti le {{jeux.date|date('d/m/Y')}}</p>
+                <p>Jouable de {{jeux.minJoueur}} à {{jeux.maxJoueur}}</p>
             </div>
         </div>
         <p class="jeuDescription">{{jeux.description}}</p>
         {% for pic in jeux.imgGameplay %}
             <img src="/img/{{pic}}" alt="" class="gameplayImg">
         {% endfor %}
-    <a href="{{ path('jeux') }}">Retourner a la liste des jeux</a>
+    <a class="links"href="{{ path('jeux') }}">Retourner a la liste des jeux</a>
     </section>
 
 

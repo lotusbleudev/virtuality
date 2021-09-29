@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tous les jeux{% endblock %}
+{% block title %}Tous les jeux
+{% endblock %}
 
 {% block body %}
-        <h1>Tous les jeux</h1>
-        {% for jeu in jeux %}
-            {% include "jeux/vignette.html.twig" %}
-        {% endfor %}
-
+	<h1>Tous les jeux</h1>
+	<div class='vignette-container'>
+		{% for jeu in jeux %}
+			{% include "jeux/vignette.html.twig" %}
+		{% endfor %}
+	</div>
 
 {% endblock %}

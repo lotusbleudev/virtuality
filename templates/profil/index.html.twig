@@ -1,53 +1,69 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil{% endblock %}
+{% block title %}Profil
+{% endblock %}
 
 {% block body %}
 
-<h1>Bonjour {{app.user.prenom}}</h1>
-<div class="tableProfil">
-    <h3>Paramètre du profil</h3>
-    <table>
-        <tr>
-            <td>Prénom </td>
-            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.prenom}}"></td>
+	<h1>Bonjour
+		{{app.user.prenom}}</h1>
+	<div class="tableProfil">
+		<h3>Paramètre du profil</h3>
+		<form action="{{ path("profil") }}">
+			<table>
+				<tbody>
+					<tr>
+						<td>Prénom
+						</td>
+						<td class="tdInput">
+							<input class="input-form" name="prenom" type="text" value="{{app.user.prenom}}"></td>
+					</tr>
+					<tr>
+						<td>Nom
+						</td>
+						<td class="tdInput">
+							<input class="input-form" name="nom" type="text" value="{{app.user.nom}}"></td>
+					</tr>
+					<tr>
+						<td>Téléphone
+						</td>
+						<td class="tdInput">
+							<input class="input-form" name="telephone" type="text" value="{{app.user.telephone}}"></td>
+					</tr>
+					<tr>
+						<td>Adresse mail
+						</td>
+						<td class="tdInput">
+							<input disabled class="input-form" type="text" value="{{app.user.email}}"></td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit" class="butn" name="submit" value="Enregistrer les modification">
+		</form>
 
-        </tr>
-        <tr>
-            <td>Nom </td>
-            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.nom}}"></td>
-        </tr>
-        <tr>
-            <td>Téléphone </td>
-            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.telephone}}"></td>
-        </tr>
-        <tr>
-            <td>Adresse mail </td>
-            <td class="tdInput"> <input class="input-form"type="text" value="{{app.user.email}}"></td>
-        </tr>
-    </table>
-    
-    <input type="submit" class="butn" value="Enregistrer les modification">
-</div>
-<div class="tableProfil">
-    <h3>Réservation</h3>
-    <table class="table">
-    <tr>
-        {# <td>Reservation</td> #}
-        <th>Date</th>
-        <th>Nombre de joueurs</th>
-        <th>Prix total</th>
-    </tr>
-    {% for reservation in app.user.reservations %}
-        <tr>
-            <td>{{reservation.date|date("d/m/Y")}} à {{ reservation.date|date('H:i') }}</td>    
-            <td>{{reservation.nbJoueurs}} joueurs</td>
-            <td>{{reservation.prixTotal}} €</td>
-        </tr>
-    {% endfor %}
-</table>
-</div>
+	</div>
+	<div class="tableProfil">
+		<h3>Réservation</h3>
+		<table class="table">
+			<tr>
+				{# <td>Reservation</td> #}
+				<th>Date</th>
+				<th>Nombre de joueurs</th>
+				<th>Prix total</th>
+			</tr>
+			{% for reservation in app.user.reservations %}
+				<tr>
+					<td>{{reservation.date|date("d/m/Y")}}
+						à
+						{{ reservation.date|date('H:i') }}</td>
+					<td>{{reservation.nbJoueurs}}
+						joueurs</td>
+					<td>{{reservation.prixTotal}}
+						€</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>
 
 
 {% endblock %}
-

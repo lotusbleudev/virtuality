@@ -31,8 +31,8 @@
                 <td>{{ user.telephone }}</td>
                 <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}"><button>Voir</button></a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}"><button>Editer</button></a>
+                    <a href="{{ path('user_show', {'id': user.id}) }}"><button class="butn">Voir</button></a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}"><button class="butn">Editer</button></a>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_new') }}"><button>Créer un nouveau</button></a>
+    <a href="{{ path('user_new') }}"><button class="butn">Créer un nouveau user</button></a>
 {% endblock %}
