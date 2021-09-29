@@ -731,6 +731,32 @@ body {
 	}
 }
 
+#politique_confid {
+	width: 80%;
+	text-align: justify;
+
+	h1 {
+		color: white;
+		font-size: 40px;
+		margin-top: 20vh;
+		margin-bottom: 5vh;
+		text-align: center;
+	}
+
+	h4 {
+		font-size: 30px;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+		text-align: center;
+	}
+
+	h5 {
+		font-size: 25px;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+	}
+}
+
 //-----------------------------------Flash_messages------------------------------------------
 .flash-success {
 	background-color: $black;
@@ -849,3 +875,9 @@ body {
 }
 
 // FIN DE PAGE PROFIL
+
+//--------------------------------------------pop up cookies----------------
+#tarteaucitronRoot #tarteaucitronAlertBig {
+	background: $color-4 !important;
+	box-shadow: 0 0 9000px $color-1 !important;
+}

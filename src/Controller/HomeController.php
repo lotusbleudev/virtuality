@@ -23,4 +23,10 @@ class HomeController extends AbstractController
     {
         return $this->render('home/cgu.html.twig');
     }
+
+    #[Route('/politique_confid', name: 'politique_confidencialite')]
+    public function politique_confid(): Response
+    {
+        return $this->render('home/politique_confid.html.twig');
+    }
 }
