@@ -59,6 +59,16 @@ class Jeux
      */
     private $tournois;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $minJoueur;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $maxJoueur;
+
     public function __construct()
     {
         $this->tournois = new ArrayCollection();
@@ -179,6 +189,30 @@ class Jeux
                 $tournoi->setJeu(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMinJoueur(): ?int
+    {
+        return $this->minJoueur;
+    }
+
+    public function setMinJoueur(int $minJoueur): self
+    {
+        $this->minJoueur = $minJoueur;
+
+        return $this;
+    }
+
+    public function getMaxJoueur(): ?int
+    {
+        return $this->maxJoueur;
+    }
+
+    public function setMaxJoueur(int $maxJoueur): self
+    {
+        $this->maxJoueur = $maxJoueur;
 
         return $this;
     }
