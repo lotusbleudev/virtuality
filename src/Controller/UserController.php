@@ -35,7 +35,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', 'L\'ajout de l\'utilisateur a été réalisé avec succès.');
+            $this->addFlash('success', 'L\'ajout de l\'utilisateur.trice a été réalisé avec succès.');
 
             return $this->redirectToRoute('user_index', [], Response::HTTP_SEE_OTHER);
         }

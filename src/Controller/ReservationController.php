@@ -39,7 +39,7 @@ class ReservationController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Félicitation vous avez bien réserver un créneau.');
+            $this->addFlash('success', 'Félicitation!! vous avez bien réserver un créneau. Vous allez recevoir un email de confirmtion de votre réservation');
 
             //Ici nous enverrons le mail
             // dd($contact);
