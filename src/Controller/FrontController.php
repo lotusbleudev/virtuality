@@ -75,10 +75,14 @@ class FrontController extends AbstractController
 
         if($currentJoueurs == $maxJoueurs){
 
+            $this->addFlash('error', 'Désolé Le nombre maximal de joueurs est déjà atteint.');
+
         }else{
             $tournoi->addJoueur($user);
             $em->persist($tournoi);
             $em->flush();
+
+            $this->addFlash('success', 'Votre inscription au tournois a été réalisé avec succès.');
         }
         return $this->redirectToRoute("tournois");
     }
@@ -91,6 +95,8 @@ class FrontController extends AbstractController
             $tournoi->removeJoueur($user);
             $em->persist($tournoi);
             $em->flush();
+
+            $this->addFlash('success', 'Vous vous êtes désinscrit de ce tournois.');
         
         return $this->redirectToRoute("tournois");
     }
@@ -103,7 +109,7 @@ class FrontController extends AbstractController
         $form->handleRequest($request);
 
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ( $form->isSubmitted() && $form->isValid()) {
             $date = $form->get('date')->getData();
             $result = $date->format('Y-m-d H:i:s');
 
@@ -152,12 +158,7 @@ class FrontController extends AbstractController
                 $entityManager->persist($reservation);
                 $entityManager->flush();
 
-                $this->addFlash('success', 'Félicitation! Vous avez bien réserver un créneau.');
-
-                $contact = $form->getData();
-
-                //Ici nous enverrons le mail
-                // dd($contact);
+                $this->addFlash('success', 'Félicitation! Vous avez bien réserver un créneau. Vous allez recevoir un email de confirmation');
 
                 $message = (new \Swift_Message('Confirmation de votre réservation'))
                     ->setFrom('virtuality255@gmail.com')

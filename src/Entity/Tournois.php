@@ -56,6 +56,7 @@ class Tournois
      */
     private $Joueurs;
 
+
     public function __construct()
     {
         $this->Joueurs = new ArrayCollection();
