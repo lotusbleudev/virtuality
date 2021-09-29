@@ -9,36 +9,37 @@
 		{{app.user.prenom}}</h1>
 	<div class="tableProfil">
 		<h3>Paramètre du profil</h3>
-		<table>
-			<tbody>
-				<tr>
-					<td>Prénom
-					</td>
-					<td class="tdInput">
-						<input class="input-form" type="text" value="{{app.user.prenom}}"></td>
-
-				</tr>
-				<tr>
-					<td>Nom
-					</td>
-					<td class="tdInput">
-						<input class="input-form" type="text" value="{{app.user.nom}}"></td>
-				</tr>
-				<tr>
-					<td>Téléphone
-					</td>
-					<td class="tdInput">
-						<input class="input-form" type="text" value="{{app.user.telephone}}"></td>
-				</tr>
-				<tr>
-					<td>Adresse mail
-					</td>
-					<td class="tdInput">
-						<input disabled class="input-form" type="text" value="{{app.user.email}}"></td>
-				</tr>
-			</tbody>
-		</table>
-			<input type="submit" class="butn" value="Enregistrer les modification">
+		<form action="{{ path("profil") }}">
+			<table>
+				<tbody>
+					<tr>
+						<td>Prénom
+						</td>
+						<td class="tdInput">
+							<input class="input-form" name="prenom" type="text" value="{{app.user.prenom}}"></td>
+					</tr>
+					<tr>
+						<td>Nom
+						</td>
+						<td class="tdInput">
+							<input class="input-form" name="nom" type="text" value="{{app.user.nom}}"></td>
+					</tr>
+					<tr>
+						<td>Téléphone
+						</td>
+						<td class="tdInput">
+							<input class="input-form" name="telephone" type="text" value="{{app.user.telephone}}"></td>
+					</tr>
+					<tr>
+						<td>Adresse mail
+						</td>
+						<td class="tdInput">
+							<input disabled class="input-form" type="text" value="{{app.user.email}}"></td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit" class="butn" name="submit" value="Enregistrer les modification">
+		</form>
 
 	</div>
 	<div class="tableProfil">
