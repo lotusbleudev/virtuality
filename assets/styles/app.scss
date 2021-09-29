@@ -213,6 +213,7 @@ body {
 					padding-left: 15px;
 					margin-bottom: 20px;
 					border-radius: 1vh;
+					border: 1px solid $color-3;
 					color: $color-1;
 					font-family: $font-1;
 					background: rgba(0, 0, 0, 0.7);
@@ -679,7 +680,7 @@ body {
 
 .contact_container {
 	display: flex;
-	margin-top: 25vh;
+
 
 	.container_form {
 		width: 45%;
@@ -691,7 +692,12 @@ body {
 
 		.contact_form {
 			display: block !important;
+
+			h1{
+				margin-left: 12vh;
+			}
 		}
+
 
 		.adresse {
 			background: $black;
