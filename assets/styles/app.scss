@@ -500,13 +500,13 @@ body {
 		#tarifsFront {
 			justify-content: center;
 			display: flex;
-			width: 80%;
+			// width: 80%;
 
 			div {
 				width: 30%;
-				display: flex;
-				flex-direction: column;
 				align-items: center;
+				text-align: justify;
+				margin: 4vh;
 				h2 {
 					margin-bottom: 5vh;
 				}
@@ -898,4 +898,56 @@ body {
 #tarteaucitronRoot #tarteaucitronAlertBig {
 	background: $color-4 !important;
 	box-shadow: 0 0 9000px $color-1 !important;
+}
+
+
+@media screen and (max-width: 660px) {
+	
+	// page contact
+	.contact_container {
+		display: flex;
+		flex-direction: column;
+
+		.container_faq {
+			width: 80%;
+			display: flex;
+			text-align: center;
+			margin: auto;
+		}
+
+		.container_form {
+			width: 100%;
+			text-align: center;
+			margin: auto;
+
+			.adresse {
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+
+
+	// page de tarification
+
+	h3 {
+		font-size: 6vw;
+	}
+
+	#tarifsFront {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 10vh;
+
+		.box {
+			width: 80%;
+			margin: auto;
+		}
+
+		.hall {
+			width: 80%;
+			margin: auto;
+		}
+	}
 }

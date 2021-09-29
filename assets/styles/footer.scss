@@ -6,7 +6,7 @@ footer {
 	text-align: center;
 	font-family: $font-1; //sans-serif;
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 1em;
 	// background-color: $color-4;
 	color: #edf0f1;
 	// height: 25vh; /* Footer height */
@@ -18,7 +18,7 @@ footer {
 	// 	//
 	// 	//
 
-	#logo{
+	#logo {
 		width: 10vw;
 	}
 	section {
@@ -59,4 +59,40 @@ footer {
 		width: 80%;
 	}
 	// }
+}
+
+@media screen and (max-width: 660px) {
+	
+	.div_colonne {
+		display: flex;
+		// flex-direction: column;
+
+		.socials{
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			margin: auto;
+
+			a {
+				margin: 1vh;
+			}
+		}
+
+		.footerLinks{
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			margin: auto;
+
+			a {
+				margin: 1vh;
+			}
+			
+			span {
+				display: none;
+			}
+		}
+	}
 }
