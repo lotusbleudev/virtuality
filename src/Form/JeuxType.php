@@ -21,9 +21,12 @@ class JeuxType extends AbstractType
             ])
             ->add('type')
             ->add('description')
-            ->add('img_cover', FileType::class)
+            ->add('img_cover', FileType::class,[
+                'mapped' => false,
+            ])
             ->add('img_gameplay', FileType::class, array(
                 'multiple' => true,
+                'mapped' => false,
                 'attr' => array(
                     'multiple' => 'multiple'
                 )
