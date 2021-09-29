@@ -209,10 +209,9 @@ body {
 					font-family: $font-1;
 					background: rgba(255, 255, 255, 0.2);
 				}
-
-				//---------------------------------------------animation-css du boutton
-				//------------------------------boutton
-				$fuschia: $color-1;
+			}
+		}
+		$fuschia: $color-1;
 				$button-bg: $fuschia;
 				$button-text-color: $white;
 				$baby-blue: $color-2;
@@ -404,13 +403,6 @@ body {
 						}
 					}
 				}
-			}
-
-			// .contact_form {
-			// 	display: flex !important;
-			// }
-		}
-
 		.table {
 			border-collapse: collapse;
 			width: 80%;
@@ -431,19 +423,19 @@ body {
 				padding-top: 12px;
 				padding-bottom: 12px;
 				text-align: left;
-				background-color: $color-3;
+				background-color: rgba($color-3, $alpha: 0.5);
 				color: white;
 			}
 			.bckoffice-th {
 				width: 30%;
 			}
-			tr:nth-child(even) {
-				background-color: $color-1;
-			}
+			// tr:nth-child(even) {
+			// 	background-color: $color-1;
+			// }
 
-			tr:hover {
-				background-color: $color-2;
-			}
+			// tr:hover {
+			// 	background-color: $color-2;
+			// }
 		}
 
 		.vignette {
@@ -817,11 +809,16 @@ body {
 	border-radius: 5px;
 	border: 2px solid $color-3;
 	padding-bottom: 20px;
+	margin: 1vh;
 	h3{
 		margin: 15px;
 	}
+	.butn{
+		margin-bottom: 1vh;
+		margin-left: 10vw;
+	}
 	table{
-		margin-left: 20vh;
+		margin-left: 10vw;
 		td{
 			width: 150px;
 			padding: 15px;
