@@ -17,7 +17,8 @@
         {% for pic in jeux.imgGameplay %}
             <img src="/img/{{pic}}" alt="" class="gameplayImg">
         {% endfor %}
-    <a href="{{ path('jeux_index') }}"><button>Retour a la liste</button></a>
+        <a href="{{ path('jeux_edit', {'id': jeux.id}) }}"><button class="butn">Editer</button></a>
+        <a href="{{ path('jeux_index') }}"><button>Retour a la liste</button></a>
     </section>
 
 
