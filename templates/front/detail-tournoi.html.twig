@@ -1,15 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{tournoi.titre}}{% endblock %}
+{% block title %}
+	{{tournoi.titre}}
+{% endblock %}
 
 {% block body %}
 
-    <section id="tournoi-detail">
-    <h1>{{tournoi.titre}}</h1>
-    <h2>{{tournoi.jeu.titre}}</h2>
-    <p>{{tournoi.dateDebut|date('d/m/Y')}}</p><br>
-    <p>{{tournoi.description}}</p>
+	<section id="tournoi-detail">
 
+		<div class="vignette">
+			<img src="/img/{{tournoi.jeu.imgCover}}" alt="">
+			<div>
+				<h1>{{tournoi.jeu.titre}}
+					-
+					{{tournoi.titre}}</h1>
+				<p class="dateNmax">Date :
+					<span>{{tournoi.dateDebut|date('d/m/Y')}}</span>
+					/ Max joueurs :
+					<span>{{tournoi.maxPlayer}}</span>
+				</p><br>
+				<p>{{tournoi.description}}</p>
+			</div>
+		</div>
+		<h3>Liste des participants:</h3>
+		<table class="table">
+			<thead>
+				{% for i in 1..tournoi.maxPlayer %}
+					<tr>
+						<th>{{i}}</th>
+					</tr>
+				{% endfor %}
+			</thead>
+            
+			<tbody>
+				{% for u in tournoi.Joueurs %}
+					<td>{{u.prenom}}</td>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+
+<<<<<<< HEAD
     <h3>Max joueurs: {{tournoi.maxPlayer}}</h3>
     <h3>Liste des participants:</h3>
     <ul>
@@ -24,6 +55,14 @@
         {% else %}
         <a href="{{path("inscription_tournoi", {id: tournoi.id})}}"><button class ="butn">S'inscrire au tournoi</button></a>
         {% endif %}
+
+=======
+    {% if exist %}
+    <a href="{{path("desinscription_tournoi", {id: tournoi.id})}}"><button class ="butn">Se desinscrire du tournoi</button></a>
+    {% else %}
+    <a href="{{path("inscription_tournoi", {id: tournoi.id})}}"><button class ="butn">S'inscrire au tournoi</button></a>
+    {% endif %}
+>>>>>>> 80e5d475fac67fa89c0e9351ff5a4d4037c7fa2d
 
 
 {% endblock %}
