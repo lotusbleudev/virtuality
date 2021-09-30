@@ -25,10 +25,12 @@
 			<span>
 				|
 			</span>
+			{% if app.user %}
 			<a href="{{ path("reservation") }}">Réservation</a>
 			<span>
 				|
 			</span>
+			{% endif %}	
 			<a href="{{ path("contact") }}">FAQ</a>
 			<span>
 				|
