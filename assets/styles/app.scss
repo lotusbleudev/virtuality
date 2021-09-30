@@ -804,6 +804,7 @@ body {
 #radio{
 	option{
 		color: black;
+		background: #f1f1f1;
 	}
 }
 #reservation_date{
@@ -847,7 +848,7 @@ body {
 		margin: 20px 0;
 		span{
 			font-size: 20px;
-			color: white;
+			color: $color-1;
 			font-weight: bold;
 		}
 	}
