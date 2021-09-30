@@ -40,12 +40,11 @@
 		</table>
 	</section>
 
+    {% if exist %}
+    <a href="{{path("desinscription_tournoi", {id: tournoi.id})}}"><button class ="butn">Se desinscrire du tournoi</button></a>
+    {% else %}
+    <a href="{{path("inscription_tournoi", {id: tournoi.id})}}"><button class ="butn">S'inscrire au tournoi</button></a>
+    {% endif %}
 
-	<a href="{{path("inscription_tournoi", {id: tournoi.id})}}">
-		<button class="butn">S'inscrire au tournoi</button>
-	</a>
-	<a href="{{path("desinscription_tournoi", {id: tournoi.id})}}">
-		<button class="butn">Se desinscrire du tournoi</button>
-	</a>
 
 {% endblock %}
