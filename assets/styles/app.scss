@@ -507,8 +507,18 @@ body {
 				align-items: center;
 				text-align: justify;
 				margin: 4vh;
+				padding: 4vh;
+				background-color: rgba(1, 4, 64, 0.5);
+	border-radius: 15px;
+	border: 2px solid #1b0273;
 				h2 {
-					margin-bottom: 5vh;
+					margin-bottom: 4vh;
+				}
+				p{
+					text-align: center;
+				}
+				li{
+					text-align: center;
 				}
 			}
 		}
