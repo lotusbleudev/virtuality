@@ -27,10 +27,14 @@
                 <th>Max_player</th>
                 <td>{{ tournoi.maxPlayer }}</td>
             </tr>
-            {# <tr>
+            <tr>
                 <th>User</th>
-                <td>{{ tournoi.Joueurs ? tournoi.Joueurs|join(', ') : '' }}</td>
-            </tr> #}
+                <td>
+                {% for joueur in tournoi.joueurs %}
+                {{ joueur.prenom}} <br>
+                {% endfor %}
+                </td>
+            </tr>
             <tr>
                 <th>Prix</th>
                 <td>{{ tournoi.prix }}</td>
