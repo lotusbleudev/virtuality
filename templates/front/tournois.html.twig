@@ -1,12 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nos tournois{% endblock %}
+{% block title %}Nos tournois
+{% endblock %}
 
 {% block body %}
-    <h1>Nos tournois</h1>
-    {% for tournoi in tournois %}
-        {% include "tournois/vignette.html.twig" %}
-    {% endfor %}
-
+<img src="/img/esport1.png" alt="" class="background">
+	<h1>Nos tournois</h1>
+	<div class="descTournoi">
+		<p>Voici la listes des tournois disponible prochainement dans notre etablissement. L'inscription à un tournois est payant et vous devez avoir au minimum 13 ans pour pouvoir y participer.</p>
+		<p>Les tournois débuteront à leur date respective à 20h et ce termineront théoriquement vers 00h. Pour remporter un prix, vous devez terminer parmis les trois meilleurs participants.</p>
+		<p>Le prix est divisé sur le podium, par exemple pour un tournois avec 100€ de prix, le 1er recevra 50€, le second 30€ et le troisieme 20€.</p>
+	</div>
+	<div class="vignette-container">
+		{% for tournoi in tournois %}
+			{% include "tournois/vignette.html.twig" %}
+		{% endfor %}
+	</div>
 
 {% endblock %}

@@ -156,7 +156,7 @@ body {
 
 		h1 {
 			color: white;
-			font-size: 40px;
+			font-size: 5vh;
 			margin-top: 10vh;
 			margin-bottom: 5vh;
 		}
@@ -803,8 +803,13 @@ body {
 // FIN DE GESTION DES INPUTS
 
 .information{
-	margin: 30px 0;
+	margin: 0vh 0vh 5vh 0;
 	width: 60%;
+	background-color: rgba(1, 4, 64, 0.5);
+	border-radius: 15px;
+	border: 2px solid #1b0273;
+	padding: 0vh 2vh;
+	text-align: center;
 	p{
 		color: #f1f1f1;
 		margin: 20px 0;
@@ -861,3 +866,19 @@ body {
 }
 
 // FIN DE PAGE PROFIL
+
+// PAGE TOURNOIS
+
+.descTournoi{
+	text-align: center;
+	font-size: 3vh;
+	width: 80%;
+	margin-bottom: 6vh;
+	background-color: rgba($color: #000000, $alpha: 0.3);
+	box-shadow: 0 0 5vh 5vh rgba($color: #000000, $alpha: 0.3);
+}
+.background{
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+}

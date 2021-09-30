@@ -1,13 +1,15 @@
 <div class="vignette">
+	<a href="{{ path('tournoi_detail', {'id': tournoi.id}) }}"><img src="/img/{{tournoi.jeu.imgCover}}" alt="">
+		<div class="vignette-content">
 
-    <div class="vignette-content">
-        <a href="{{ path('tournoi_detail', {'id': tournoi.id}) }}">
-            <div>
-                <p class="titre">{{ tournoi.jeu.titre }}</p>
-                <p class="type">{{ tournoi.description }}</p>
-                <p class="type">{{tournoi.prix}}</p>
-            </div>
-        </a>
-    </div>
+			<div>
+				<p class="titre">{{ tournoi.jeu.titre }}</p>
+				<p class="type">{{ tournoi.description }}</p>
+				<p class="type">{{tournoi.prix}}</p>
+				<p>{{ tournoi.dateDebut ? tournoi.dateDebut|date('d-m-Y') : '' }}</p>
+			</div>
+		</a>
+	</div>
 
 </div>
+
