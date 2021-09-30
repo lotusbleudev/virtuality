@@ -213,6 +213,7 @@ body {
 					padding-left: 15px;
 					margin-bottom: 20px;
 					border-radius: 1vh;
+					border: 1px solid $color-3;
 					color: $color-1;
 					font-family: $font-1;
 					background: rgba(0, 0, 0, 0.7);
@@ -499,13 +500,13 @@ body {
 		#tarifsFront {
 			justify-content: center;
 			display: flex;
-			width: 80%;
+			// width: 80%;
 
 			div {
 				width: 30%;
-				display: flex;
-				flex-direction: column;
 				align-items: center;
+				text-align: justify;
+				margin: 4vh;
 				h2 {
 					margin-bottom: 5vh;
 				}
@@ -679,7 +680,7 @@ body {
 
 .contact_container {
 	display: flex;
-	margin-top: 25vh;
+
 
 	.container_form {
 		width: 45%;
@@ -691,7 +692,12 @@ body {
 
 		.contact_form {
 			display: block !important;
+
+			h1{
+				margin-left: 12vh;
+			}
 		}
+
 
 		.adresse {
 			background: $black;
@@ -699,7 +705,7 @@ body {
 			border-radius: 4px;
 			margin: 0 0 2vh 10vh;
 			padding: 0 0 4vh;
-			box-shadow: 0 2px 6px rgba(6, 0, 58, 0.548);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 			color: $color-1;
 		}
 	}
@@ -732,6 +738,32 @@ body {
 	}
 
 	h4 {
+		font-size: 25px;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+	}
+}
+
+#politique_confid {
+	width: 80%;
+	text-align: justify;
+
+	h1 {
+		color: white;
+		font-size: 40px;
+		margin-top: 20vh;
+		margin-bottom: 5vh;
+		text-align: center;
+	}
+
+	h4 {
+		font-size: 30px;
+		margin-top: 10vh;
+		margin-bottom: 5vh;
+		text-align: center;
+	}
+
+	h5 {
 		font-size: 25px;
 		margin-top: 10vh;
 		margin-bottom: 5vh;
@@ -781,16 +813,16 @@ body {
 	padding: 0;
 
 	input{
-		background: rgba(255, 255, 255, 0.2);
+		background: rgba(0, 0, 0, 0.7);
 		color: white;
-		border-radius: 5px;
+		border: none;
 		font-size: 20px;
 		margin-right: 30px;
 	}
 	select{
-		background: rgba(255, 255, 255, 0.2);
+		background: rgba(0, 0, 0, 0.7);
 		color: white;
-		border-radius: 5px;
+		border: none;
 		font-size: 20px;
 		margin: 0 5px;
 		option{
@@ -881,4 +913,60 @@ body {
 	width: 100%;
 	position: absolute;
 	z-index: -1;
+//--------------------------------------------pop up cookies----------------
+#tarteaucitronRoot #tarteaucitronAlertBig {
+	background: $color-4 !important;
+	box-shadow: 0 0 9000px $color-1 !important;
+}
+
+
+@media screen and (max-width: 660px) {
+	
+	// page contact
+	.contact_container {
+		display: flex;
+		flex-direction: column;
+
+		.container_faq {
+			width: 80%;
+			display: flex;
+			text-align: center;
+			margin: auto;
+		}
+
+		.container_form {
+			width: 100%;
+			text-align: center;
+			margin: auto;
+
+			.adresse {
+				width: 100%;
+				margin: 0;
+			}
+		}
+	}
+
+
+	// page de tarification
+
+	h3 {
+		font-size: 6vw;
+	}
+
+	#tarifsFront {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 10vh;
+
+		.box {
+			width: 80%;
+			margin: auto;
+		}
+
+		.hall {
+			width: 80%;
+			margin: auto;
+		}
+	}
 }

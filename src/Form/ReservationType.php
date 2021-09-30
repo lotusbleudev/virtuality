@@ -21,7 +21,7 @@ class ReservationType extends AbstractType
                 'minutes' => [00],
                 'attr' => [],
                 'constraints' => [
-                    new GreaterThan(date("Y/m/d"), null, 'Veuillez choisir une date valide')
+                    new GreaterThan(date("Y/m/d H:i"), null, 'Veuillez choisir une date valide')
                 ]
 
             ])
