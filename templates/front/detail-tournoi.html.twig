@@ -40,29 +40,11 @@
 		</table>
 	</section>
 
-<<<<<<< HEAD
-    <h3>Max joueurs: {{tournoi.maxPlayer}}</h3>
-    <h3>Liste des participants:</h3>
-    <ul>
-        {% for u in tournoi.Joueurs %}
-            <li>{{u.prenom}}</li>
-        {% endfor %}
-    </ul>
-    </section>
-
-        {% if exist %}
-        <a href="{{path("desinscription_tournoi", {id: tournoi.id})}}"><button class ="butn">Se desinscrire du tournoi</button></a>
-        {% else %}
-        <a href="{{path("inscription_tournoi", {id: tournoi.id})}}"><button class ="butn">S'inscrire au tournoi</button></a>
-        {% endif %}
-
-=======
     {% if exist %}
     <a href="{{path("desinscription_tournoi", {id: tournoi.id})}}"><button class ="butn">Se desinscrire du tournoi</button></a>
     {% else %}
     <a href="{{path("inscription_tournoi", {id: tournoi.id})}}"><button class ="butn">S'inscrire au tournoi</button></a>
     {% endif %}
->>>>>>> 80e5d475fac67fa89c0e9351ff5a4d4037c7fa2d
 
 
 {% endblock %}
