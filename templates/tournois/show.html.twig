@@ -29,7 +29,12 @@
             </tr>
             <tr>
                 <th>User</th>
-                <td>{{ tournoi.Joueurs ? tournoi.Joueurs|join(', ') : '' }}</td>
+                <td>
+                {% for joueur in tournoi.joueurs %}
+                {{ joueur.prenom}} <br>
+                    
+                {% endfor %}
+                </td>
             </tr>
             <tr>
                 <th>Prix</th>
