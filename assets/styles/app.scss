@@ -908,6 +908,13 @@ body {
 	margin-bottom: 6vh;
 	background-color: rgba($color: #000000, $alpha: 0.3);
 	box-shadow: 0 0 5vh 5vh rgba($color: #000000, $alpha: 0.3);
+	span{
+		font-weight: bold;
+		color: $color-1;
+	}
+	p{
+		margin-bottom: 1vh;
+	}
 }
 .background{
 	width: 100%;
@@ -921,6 +928,7 @@ body {
 #tournoi-detail{
 	width: 80%;
 	margin-top: 12vh;
+	
 	.vignette{
 		width: 100%;
 		justify-content: space-between;
@@ -947,12 +955,14 @@ body {
 	}
 	.table{
 		display: flex;
+		margin: auto;
 		th{
 			
 			height: 40px;
-			padding: 10px 10px 11px 10px;
+			padding: 10px 10vw 11px 10vw;
 		}
 		tbody{
+			width: 100%;
 			tr{
 				display: flex;
 				flex-direction: column;
