@@ -62,7 +62,7 @@ class FrontController extends AbstractController
     {
         $tournoi = $tr->find($id);
         $joueurs = $tournoi->getJoueurs();
-
+        
         $isInscrit = $joueurs->contains($user);
         
         return $this->render('front/detail-tournoi.html.twig', [

@@ -1,5 +1,10 @@
 <div class="vignette">
+{% if app.user %}
 	<a href="{{ path('tournoi_detail', {'id': tournoi.id}) }}"><img src="/img/{{tournoi.jeu.imgCover}}" alt="">
+{% else %}
+	<a href="{{path("app_login")}}"><img src="/img/{{tournoi.jeu.imgCover}}" alt="">
+	{% endif %}
+
 		<div class="vignette-content">
 
 			<div>
