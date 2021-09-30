@@ -58,11 +58,14 @@ class FrontController extends AbstractController
     }
 
     #[Route('tournois/{id}', name: 'tournoi_detail')]
-    public function tournois_detail(Tournois $tournois): Response
+    public function tournois_detail(Tournois $tournois, UserInterface $user, TournoisRepository $tr, $id): Response
     {
-
+        $tournoi = $tr->find($id);
+        $joueurs = $tournoi->getJoueurs();
+        $isInscrit = $joueurs->contains($user);
         return $this->render('front/detail-tournoi.html.twig', [
-            "tournoi" => $tournois, 
+            "tournoi" => $tournois,
+            "exist" =>  $isInscrit,
         ]);
     }
 
@@ -72,6 +75,7 @@ class FrontController extends AbstractController
         $tournoi = $tr->find($id);
         $maxJoueurs = $tournoi->getMaxPlayer();
         $currentJoueurs = count($tournoi->getJoueurs());
+        
 
         if($currentJoueurs == $maxJoueurs){
 

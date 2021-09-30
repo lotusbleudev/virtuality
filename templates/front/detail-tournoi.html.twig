@@ -18,8 +18,10 @@
         {% endfor %}
     </ul>
     </section>
-    
-    <a href="{{path("inscription_tournoi", {id: tournoi.id})}}"><button class ="butn">S'inscrire au tournoi</button></a>
+    {% if exist %}
     <a href="{{path("desinscription_tournoi", {id: tournoi.id})}}"><button class ="butn">Se desinscrire du tournoi</button></a>
+    {% else %}
+    <a href="{{path("inscription_tournoi", {id: tournoi.id})}}"><button class ="butn">S'inscrire au tournoi</button></a>
+    {% endif %}
 
 {% endblock %}
