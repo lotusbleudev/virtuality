@@ -35,6 +35,10 @@
 			<a class="links" href="{{ path("tournois") }}">Tournois</a>
 			{% if app.user %}
 				<a class="links" href="{{ path("reservation") }}">Reserver</a>
+				{% else %}
+				<a class="links" href="{{path("app_login")}}">Connectez vous pour réserver
+					<i class="fas fa-user"></i>
+				</a>	
 			{% endif %}
 			{% if is_granted('ROLE_ADMIN') %}
 				<a class="links" href="{{ path("backoffice") }}">Backoffice</a>
